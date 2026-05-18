@@ -3,477 +3,286 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jeju! jakie to proste — nauka angielskiego online</title>
-<meta name="description" content="Angielski online dla Polaków — lekcje indywidualne i grupowe, warsztaty, ebooki. Dla kierowców, opiekunów, au pair i wszystkich, którzy chcą mówić po angielsku bez stresu.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>JEJU! - Angielski online</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --cream:#FDF8F2;--brown:#3D2B1F;--terra:#C4612A;--terra-light:#F0C4A8;
-  --sage:#7A9E7E;--sage-light:#D4E8D5;--gold:#D4A843;--muted:#7A6558;
-  --white:#fff;--polish-red:#DC143C;
+--bg:#FDF8F2;
+--text:#2B1D17;
+--muted:#7A6B63;
+--accent:#C4612A;
+--card:#ffffff;
+--soft:#f4e7dd;
 }
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--brown);overflow-x:hidden}
- 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0.85rem 2rem;display:flex;align-items:center;justify-content:space-between;background:rgba(253,248,242,0.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(196,97,42,0.12)}
-.logo-wrap{display:flex;flex-direction:column;line-height:1}
-.logo{font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--terra)}
-.logo-tag{font-size:0.58rem;color:var(--muted);letter-spacing:1.8px;text-transform:uppercase;margin-top:1px}
-.nav-links{display:flex;gap:1.4rem;list-style:none}
-.nav-links a{text-decoration:none;color:var(--muted);font-size:0.8rem;font-weight:500;transition:color 0.2s}
-.nav-links a:hover{color:var(--terra)}
-.nav-cta{background:var(--terra);color:white;padding:0.48rem 1.15rem;border-radius:999px;font-size:0.8rem;font-weight:500;text-decoration:none;transition:background 0.2s}
-.nav-cta:hover{background:var(--brown)}
-.nav-mob{display:none;background:none;border:none;cursor:pointer;font-size:1.4rem;color:var(--terra)}
- 
-.hero{min-height:100vh;padding:7rem 2rem 4rem;position:relative;overflow:hidden;display:flex;align-items:center;background:var(--cream)}
-.hero-bg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Playfair Display',serif;font-size:18vw;color:rgba(196,97,42,0.04);white-space:nowrap;pointer-events:none;z-index:0;font-weight:600}
-.hero-inner{max-width:1100px;margin:0 auto;width:100%;position:relative;z-index:1;display:grid;grid-template-columns:1.15fr 0.85fr;gap:3rem;align-items:center}
-.hero-flag{display:flex;align-items:center;gap:8px;margin-bottom:1.25rem}
-.flag{width:26px;height:17px;border-radius:3px;overflow:hidden;display:flex;flex-direction:column;border:1px solid rgba(0,0,0,0.08)}
-.fw{flex:1;background:#fff}.fr{flex:1;background:var(--polish-red)}
-.flag-txt{font-size:0.72rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
-.hero-logo{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,5vw,4rem);color:var(--terra);line-height:1;margin-bottom:0.3rem}
-.hero-logo span{font-style:italic;font-size:clamp(1.2rem,2.5vw,1.8rem);color:var(--brown);display:block;margin-top:0.15rem}
-.hero-tagline{font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2vw,1.55rem);color:var(--brown);line-height:1.4;margin:1rem 0 0.75rem;font-style:italic}
-.hero-tagline strong{font-style:normal;color:var(--terra)}
-.hero-sub{font-size:0.95rem;color:var(--muted);line-height:1.85;margin-bottom:1.75rem;font-weight:300;max-width:500px}
-.hero-sub em{color:var(--terra);font-style:normal;font-weight:500}
-.hero-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:2rem}
-.btn-p{background:var(--terra);color:white;padding:0.75rem 1.6rem;border-radius:999px;text-decoration:none;font-weight:500;font-size:0.88rem;transition:all 0.2s;display:inline-block;border:none;cursor:pointer}
-.btn-p:hover{background:var(--brown);transform:translateY(-1px)}
-.btn-s{background:transparent;color:var(--terra);padding:0.75rem 1.6rem;border-radius:999px;text-decoration:none;font-weight:500;font-size:0.88rem;border:1.5px solid var(--terra);transition:all 0.2s;display:inline-block}
-.btn-s:hover{background:var(--terra-light)}
-.hero-proof{display:flex;gap:1.5rem;flex-wrap:wrap}
-.proof-n{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--terra);line-height:1}
-.proof-t{font-size:0.72rem;color:var(--muted);margin-top:2px}
-.hero-right{display:flex;flex-direction:column;gap:10px}
-.hcard{background:white;border-radius:14px;padding:1rem 1.15rem;border:1px solid rgba(196,97,42,0.1);display:flex;align-items:flex-start;gap:11px;transition:transform 0.2s}
-.hcard:hover{transform:translateX(4px)}
-.hcard-ic{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;margin-top:1px}
-.hcard-txt strong{display:block;font-size:0.85rem;color:var(--brown);margin-bottom:2px}
-.hcard-txt span{font-size:0.78rem;color:var(--muted);line-height:1.5}
-.ic1{background:var(--terra-light)}.ic2{background:var(--sage-light)}.ic3{background:#F5E9C8}.ic5{background:#D5E8F0}
- 
-.conf-sec{background:var(--brown);padding:5rem 2rem;position:relative;overflow:hidden}
-.conf-inner{max-width:1100px;margin:0 auto}
-.conf-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:2.5rem}
-.conf-quote{font-family:'Playfair Display',serif;font-size:1.05rem;color:rgba(255,255,255,0.75);line-height:1.8;font-style:italic;border-left:3px solid var(--terra);padding-left:1.25rem;margin:1.5rem 0}
-.conf-p{font-size:0.9rem;color:rgba(255,255,255,0.6);line-height:1.85;font-weight:300}
-.conf-p em{color:var(--terra-light);font-style:normal;font-weight:500}
-.conf-cards{display:flex;flex-direction:column;gap:1rem}
-.conf-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:1.25rem 1.4rem;display:flex;gap:12px;align-items:flex-start;transition:background 0.2s}
-.conf-card:hover{background:rgba(255,255,255,0.1)}
-.conf-card-ic{font-size:1.4rem;flex-shrink:0;margin-top:2px}
-.conf-card-txt strong{display:block;font-size:0.9rem;color:white;margin-bottom:4px}
-.conf-card-txt p{font-size:0.82rem;color:rgba(255,255,255,0.55);line-height:1.6}
- 
-section{padding:4.5rem 2rem;max-width:1100px;margin:0 auto}
-.sec-label{font-size:0.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--terra);margin-bottom:0.6rem}
-.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.65rem,2.6vw,2.15rem);color:var(--brown);margin-bottom:0.8rem;line-height:1.25}
-.sec-sub{color:var(--muted);font-size:0.92rem;line-height:1.8;max-width:580px;font-weight:300}
- 
-.about-grid{display:grid;grid-template-columns:0.8fr 1.2fr;gap:3.5rem;align-items:center;margin-top:2.5rem}
-.about-vis{position:relative}
-.about-box{width:100%;aspect-ratio:3/4;border-radius:24px;background:linear-gradient(145deg,var(--terra-light),var(--sage-light));display:flex;align-items:center;justify-content:center;font-size:5rem}
-.astat{position:absolute;background:white;border-radius:14px;padding:0.8rem 1rem;box-shadow:0 4px 20px rgba(61,43,31,0.12);text-align:center;border:1px solid rgba(196,97,42,0.1)}
-.astat.a1{bottom:-14px;right:-14px}
-.astat.a2{top:-14px;left:-14px;background:var(--terra)}
-.sn{font-family:'Playfair Display',serif;font-size:1.7rem;color:var(--terra);line-height:1}
-.a2 .sn{color:white;font-size:1.4rem}
-.st{font-size:0.67rem;color:var(--muted);margin-top:2px}
-.a2 .st{color:rgba(255,255,255,0.7)}
-.about-pts{list-style:none;margin-top:1.4rem;display:flex;flex-direction:column;gap:0.65rem}
-.about-pts li{display:flex;gap:9px;font-size:0.88rem;color:var(--muted);line-height:1.65;align-items:flex-start}
-.about-pts li::before{content:'✦';color:var(--terra);font-size:0.62rem;margin-top:5px;flex-shrink:0}
- 
-.cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.1rem;margin-top:2.5rem}
-.cc{background:white;border-radius:16px;padding:1.4rem;border:1px solid rgba(196,97,42,0.1);transition:transform 0.2s,box-shadow 0.2s;position:relative}
-.cc::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:16px 16px 0 0;background:var(--terra);opacity:0;transition:opacity 0.2s}
-.cc:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(61,43,31,0.09)}
-.cc:hover::after,.cc.hot::after{opacity:1}
-.cc.hot{border-color:rgba(196,97,42,0.35)}
-.cc-ic{font-size:1.4rem;margin-bottom:0.7rem}
-.cc-title{font-family:'Playfair Display',serif;font-size:1rem;color:var(--brown);margin-bottom:0.35rem}
-.cc-desc{font-size:0.82rem;color:var(--muted);line-height:1.65;margin-bottom:0.85rem}
-.cc-price{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--terra)}
-.cc-price small{font-family:'DM Sans',sans-serif;font-size:0.72rem;color:var(--muted);font-weight:300}
-.cc-note{font-size:0.72rem;color:var(--muted);margin-top:0.35rem;font-style:italic}
-.hot-badge{display:inline-block;background:var(--terra);color:white;font-size:0.65rem;font-weight:600;padding:2px 9px;border-radius:999px;margin-bottom:0.5rem}
- 
-.port-tabs{display:flex;gap:7px;margin-bottom:1.6rem;flex-wrap:wrap}
-.ptab{background:white;border:1px solid rgba(196,97,42,0.2);color:var(--muted);font-size:0.78rem;font-weight:500;padding:5px 14px;border-radius:999px;cursor:pointer;transition:all 0.18s;font-family:'DM Sans',sans-serif}
-.ptab:hover,.ptab.active{background:var(--terra);border-color:var(--terra);color:white}
-.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:1rem}
-.pi{background:white;border-radius:12px;overflow:hidden;border:1px solid rgba(196,97,42,0.08);transition:transform 0.2s,box-shadow 0.2s;cursor:pointer}
-.pi:hover{transform:translateY(-3px);box-shadow:0 7px 20px rgba(61,43,31,0.09)}
-.pt{height:100px;display:flex;align-items:center;justify-content:center;font-size:2rem}
-.t1{background:var(--terra-light)}.t2{background:var(--sage-light)}.t3{background:#F5E9C8}.t4{background:#E8D5F0}.t5{background:#D5E8F0}
-.pi-info{padding:0.8rem}
-.pi-info h4{font-family:'Playfair Display',serif;font-size:0.85rem;color:var(--brown);margin-bottom:2px}
-.pi-info p{font-size:0.73rem;color:var(--muted);line-height:1.5}
- 
-.eb-bg{background:var(--brown);padding:4.5rem 2rem}
-.eb-inner{max-width:1100px;margin:0 auto}
-.eb-inner .sec-title{color:white}
-.eb-inner .sec-label{color:var(--terra-light)}
-.eb-inner .sec-sub{color:rgba(255,255,255,0.55);max-width:580px}
-.eb-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.1rem;margin-top:2.25rem}
-.eb{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.09);border-radius:16px;padding:1.3rem;transition:background 0.2s,transform 0.2s;cursor:pointer;position:relative}
-.eb:hover{background:rgba(255,255,255,0.1);transform:translateY(-3px)}
-.eb-cover{height:105px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin-bottom:0.9rem}
-.ec1{background:linear-gradient(135deg,#C4612A,#E8935A)}
-.ec2{background:linear-gradient(135deg,#2d5e31,#7A9E7E)}
-.ec3{background:linear-gradient(135deg,#1a5276,#2e86c1)}
-.ec4{background:linear-gradient(135deg,#6c3483,#a569bd)}
-.ec5{background:linear-gradient(135deg,#b7950b,#D4A843)}
-.eb-tag{font-size:0.65rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--terra-light);margin-bottom:0.35rem}
-.eb-title{font-family:'Playfair Display',serif;font-size:0.92rem;color:white;margin-bottom:0.35rem;line-height:1.35}
-.eb-desc{font-size:0.76rem;color:rgba(255,255,255,0.5);line-height:1.6;margin-bottom:0.8rem}
-.eb-price{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--gold)}
-.eb-new{position:absolute;top:0.9rem;right:0.9rem;background:var(--terra);color:white;font-size:0.62rem;font-weight:600;padding:2px 7px;border-radius:999px}
- 
-.tg{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin-top:2.25rem}
-.tc{background:white;border-radius:14px;padding:1.3rem;border:1px solid rgba(196,97,42,0.1)}
-.tc-stars{color:var(--gold);font-size:0.8rem;margin-bottom:0.6rem;letter-spacing:1px}
-.tc-q{font-size:0.85rem;color:var(--muted);line-height:1.75;font-style:italic;margin-bottom:1rem;font-family:'Playfair Display',serif}
-.tc-who{display:flex;align-items:center;gap:9px}
-.tav{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:white;font-weight:600;flex-shrink:0}
-.av1{background:var(--terra)}.av2{background:var(--sage)}.av3{background:var(--gold)}.av4{background:#9B59B6}
-.twho{font-size:0.76rem;color:var(--muted)}
-.twho strong{display:block;color:var(--brown);font-weight:500;font-size:0.8rem}
- 
-.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;margin-top:2.5rem}
-.ci h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--brown);margin-bottom:0.8rem}
-.ci p{color:var(--muted);font-size:0.88rem;line-height:1.85;font-weight:300;margin-bottom:1.25rem}
-.csteps{list-style:none;display:flex;flex-direction:column;gap:0.85rem}
-.csteps li{display:flex;gap:10px;align-items:flex-start}
-.csnum{width:25px;height:25px;border-radius:50%;background:var(--terra);color:white;font-size:0.7rem;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-.cstxt{font-size:0.85rem;color:var(--muted);line-height:1.6}
-.cstxt strong{display:block;color:var(--brown);font-weight:500;margin-bottom:1px}
-.cf{background:white;border-radius:20px;padding:1.65rem;box-shadow:0 6px 28px rgba(61,43,31,0.07);border:1px solid rgba(196,97,42,0.1)}
-.fg{margin-bottom:1rem}
-.fg label{display:block;font-size:0.76rem;font-weight:500;color:var(--muted);margin-bottom:4px}
-.fg input,.fg select,.fg textarea{width:100%;padding:0.62rem 0.88rem;border:1.5px solid rgba(196,97,42,0.18);border-radius:9px;font-family:'DM Sans',sans-serif;font-size:0.85rem;color:var(--brown);background:var(--cream);outline:none;transition:border-color 0.18s}
-.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--terra)}
-.fg textarea{resize:vertical;min-height:80px}
-.frow{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem}
-.fsub{width:100%;background:var(--terra);color:white;border:none;padding:0.78rem;border-radius:999px;font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:500;cursor:pointer;transition:all 0.2s;margin-top:0.25rem}
-.fsub:hover{background:var(--brown);transform:translateY(-1px)}
- 
-footer{background:var(--brown);padding:2.5rem 2rem 1.5rem}
-.fi{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.fl{font-family:'Playfair Display',serif;font-size:1.35rem;color:white}
-.fl-s{font-size:0.58rem;color:rgba(255,255,255,0.35);letter-spacing:1.5px;text-transform:uppercase;display:block}
-.flinks{display:flex;gap:1.3rem;list-style:none;flex-wrap:wrap}
-.flinks a{color:rgba(255,255,255,0.45);text-decoration:none;font-size:0.78rem;transition:color 0.2s}
-.flinks a:hover{color:white}
-.fcopy{max-width:1100px;margin:1.4rem auto 0;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,0.08);text-align:center;font-size:0.72rem;color:rgba(255,255,255,0.28)}
- 
-.fade-up{opacity:0;transform:translateY(16px);transition:opacity 0.6s ease,transform 0.6s ease}
-.fade-up.visible{opacity:1;transform:translateY(0)}
-@keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.hero-text{animation:fu 0.7s ease both}
-.hero-right{animation:fu 0.7s 0.2s ease both}
- 
-@media(max-width:768px){
-  .nav-links,.nav-cta{display:none}
-  .nav-mob{display:block}
-  .hero-inner{grid-template-columns:1fr}
-  .hero-right{display:none}
-  .conf-grid,.about-grid,.contact-wrap{grid-template-columns:1fr}
-  .about-vis{max-width:260px;margin:0 auto 2rem}
-  .frow{grid-template-columns:1fr}
-  .fi{flex-direction:column;text-align:center}
-  .flinks{justify-content:center}
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:'DM Sans',sans-serif;
+background:var(--bg);
+color:var(--text);
+overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+position:fixed;
+top:0;left:0;right:0;
+background:rgba(253,248,242,0.92);
+backdrop-filter:blur(12px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:1rem 2rem;
+z-index:100;
+border-bottom:1px solid rgba(0,0,0,0.05);
+}
+
+.logo{
+font-family:'Playfair Display';
+font-size:1.4rem;
+font-weight:600;
+color:var(--accent);
+letter-spacing:1px;
+}
+
+.cta{
+background:var(--accent);
+color:white;
+padding:0.6rem 1.2rem;
+border-radius:999px;
+text-decoration:none;
+font-weight:500;
+transition:0.2s;
+}
+.cta:hover{transform:translateY(-2px);opacity:0.9}
+
+/* HERO */
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:7rem 1.5rem 4rem;
+}
+
+.hero h1{
+font-family:'Playfair Display';
+font-size:clamp(2.2rem,5vw,3.5rem);
+margin-bottom:1rem;
+}
+
+.hero p{
+max-width:600px;
+margin:0 auto;
+color:var(--muted);
+font-size:1.05rem;
+line-height:1.7;
+}
+
+.hero-buttons{
+margin-top:2rem;
+display:flex;
+gap:1rem;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.btn-primary{
+background:var(--accent);
+color:white;
+padding:0.8rem 1.4rem;
+border-radius:999px;
+text-decoration:none;
+font-weight:500;
+}
+
+.btn-secondary{
+border:1px solid var(--accent);
+color:var(--accent);
+padding:0.8rem 1.4rem;
+border-radius:999px;
+text-decoration:none;
+}
+
+/* SECTIONS */
+section{
+max-width:1100px;
+margin:0 auto;
+padding:5rem 1.5rem;
+}
+
+.section-title{
+font-family:'Playfair Display';
+font-size:2rem;
+margin-bottom:1rem;
+}
+
+.section-sub{
+color:var(--muted);
+margin-bottom:2.5rem;
+max-width:600px;
+line-height:1.7;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:1.5rem;
+}
+
+.card{
+background:var(--card);
+padding:1.5rem;
+border-radius:18px;
+border:1px solid rgba(0,0,0,0.05);
+transition:0.25s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.card h3{
+margin-bottom:0.5rem;
+}
+
+.card p{
+color:var(--muted);
+font-size:0.9rem;
+line-height:1.6;
+}
+
+/* OFFER */
+.price{
+font-weight:600;
+color:var(--accent);
+margin-top:0.5rem;
+}
+
+/* TESTIMONIALS */
+.testimonial{
+background:var(--soft);
+padding:1.5rem;
+border-radius:16px;
+font-style:italic;
+}
+
+/* CTA SECTION */
+.cta-section{
+background:var(--text);
+color:white;
+text-align:center;
+border-radius:24px;
+padding:4rem 2rem;
+}
+
+.cta-section h2{
+font-family:'Playfair Display';
+font-size:2rem;
+margin-bottom:1rem;
+}
+
+footer{
+text-align:center;
+padding:2rem;
+color:var(--muted);
+font-size:0.85rem;
 }
 </style>
 </head>
+
 <body>
- 
+
 <nav>
-  <div class="logo-wrap">
-    <div class="logo">Jeju! <span style="font-style:italic;font-size:0.95rem;color:var(--muted)">jakie to proste</span></div>
-    <span class="logo-tag">nauka angielskiego online</span>
-  </div>
-  <ul class="nav-links">
-    <li><a href="#o-mnie">O mnie</a></li>
-    <li><a href="#zajecia">Zajęcia</a></li>
-    <li><a href="#portfolio">Portfolio</a></li>
-    <li><a href="#ebooki">Ebooki</a></li>
-    <li><a href="#kontakt">Kontakt</a></li>
-  </ul>
-  <a href="#kontakt" class="nav-cta">Zacznij za darmo</a>
-  <button class="nav-mob" onclick="toggleMenu()" aria-label="Menu">☰</button>
+<div class="logo">JEJU!</div>
+<a class="cta" href="#kontakt">Zacznij za darmo</a>
 </nav>
- 
+
 <div class="hero">
-  <div class="hero-bg">Jeju!</div>
-  <div class="hero-inner">
-    <div class="hero-text">
-      <div class="hero-flag">
-        <div class="flag"><div class="fw"></div><div class="fr"></div></div>
-        <span class="flag-txt">Dla Polaków — online, na Google Meet</span>
-      </div>
-      <div class="hero-logo">Jeju!<span>jakie to proste</span></div>
-      <p class="hero-tagline">Przestań się bać angielskiego.<br><strong>Zacznij go czuć.</strong></p>
-      <p class="hero-sub">Wiem, jak to jest — czerwienisz się przy obcokrajowcach, blokujesz się w połowie zdania, albo po prostu unikasz angielskiego jak ognia. <em>To się zmienia tutaj.</em> Pracujemy razem nie tylko nad językiem, ale nad pewnością siebie, stresem i tym głosem w głowie, który mówi "nie dam rady".</p>
-      <div class="hero-btns">
-        <a href="#kontakt" class="btn-p">Chcę bezpłatną lekcję próbną</a>
-        <a href="#pewnosc" class="btn-s">Jak to działa?</a>
-      </div>
-      <div class="hero-proof">
-        <div><div class="proof-n">300+</div><div class="proof-t">zadowolonych kursantów</div></div>
-        <div><div class="proof-n">5 lat</div><div class="proof-t">doświadczenia</div></div>
-        <div><div class="proof-n">100%</div><div class="proof-t">online — Google Meet</div></div>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div class="hcard"><div class="hcard-ic ic1">🚛</div><div class="hcard-txt"><strong>Kierowcy ciężarówek</strong><span>Niemcy, Holandia, UK — dasz radę na drodze</span></div></div>
-      <div class="hcard"><div class="hcard-ic ic2">👵</div><div class="hcard-txt"><strong>Opiekunowie osób starszych</strong><span>Codzienna komunikacja z podopiecznymi</span></div></div>
-      <div class="hcard"><div class="hcard-ic ic3">👩‍👧</div><div class="hcard-txt"><strong>Au pair & praca sezonowa</strong><span>Rozmowy, codzienne sytuacje</span></div></div>
-      <div class="hcard"><div class="hcard-ic ic5">✈️</div><div class="hcard-txt"><strong>Wakacje & podróże</strong><span>Od lotniska po przygodę poza hotelem</span></div></div>
-      <div class="hcard"><div class="hcard-ic ic3">💼</div><div class="hcard-txt"><strong>Corporate English</strong><span> Przygotowanie do spotkania czy prezentacji </span></div></div>
-    </div>
-  </div>
+<div>
+<h1>Angielski, który w końcu zaczyna działać w praktyce</h1>
+<p>
+Bez stresu. Bez szkolnego podejścia. Tylko realne mówienie, sytuacje z życia i szybkie efekty.
+</p>
+
+<div class="hero-buttons">
+<a class="btn-primary" href="#oferta">Zobacz lekcje</a>
+<a class="btn-secondary" href="#kontakt">Pierwsza lekcja gratis</a>
 </div>
- 
-<div class="conf-sec" id="pewnosc">
-  <div class="conf-inner">
-    <div class="conf-grid">
-      <div>
-        <div class="sec-label" style="color:var(--terra-light)">Coś więcej niż język</div>
-        <h2 class="sec-title" style="color:white;font-size:clamp(1.7rem,2.8vw,2.3rem)">Angielski bez strachu.<br>Pewność siebie w prezencie.</h2>
-        <blockquote class="conf-quote">"Nie chodzi tylko o gramatykę. Chodzi o to, że masz prawo mówić — i że Twój głos ma wartość."</blockquote>
-        <p class="conf-p">Większość kursów uczy słów i reguł. Ja uczę <em>odwagi do mówienia</em>. Pracujemy z lękiem przed oceną, ze wstydem przy błędach i z tym paraliżem, który czujesz zanim otworzysz usta. Moje lekcje to bezpieczna przestrzeń — bez oceniania, bez pośpiechu, z dużą dawką ciepła i humoru.</p>
-      </div>
-      <div class="conf-cards">
-        <div class="conf-card"><div class="conf-card-ic">🫶</div><div class="conf-card-txt"><strong>Bezpieczna przestrzeń</strong><p>Błędy są częścią nauki — nigdy nie oceniam, zawsze wspieram.</p></div></div>
-        <div class="conf-card"><div class="conf-card-ic">🧠</div><div class="conf-card-txt"><strong>Odczarowanie stresu</strong><p>Pracujemy z lękiem językowym — bo on jest prawdziwy i ma nazwę.</p></div></div>
-        <div class="conf-card"><div class="conf-card-ic">💬</div><div class="conf-card-txt"><strong>Pewność siebie w mówieniu</strong><p>Zamiast idealnych zdań — naturalna, prawdziwa komunikacja.</p></div></div>
-        <div class="conf-card"><div class="conf-card-ic">🌱</div><div class="conf-card-txt"><strong>Twoje tempo, Twój plan</strong><p>Każda lekcja dopasowana do Ciebie — nie do podręcznika.</p></div></div>
-      </div>
-    </div>
-  </div>
 </div>
- 
-<section id="o-mnie">
-  <div class="sec-label fade-up">O mnie</div>
-  <div class="about-grid">
-    <div class="about-vis fade-up">
-      <div class="about-box">👩‍🏫</div>
-      <div class="astat a1"><div class="sn">300+</div><div class="st">kursantów</div></div>
-      <div class="astat a2"><div class="sn">5 lat</div><div class="st">doświadczenia</div></div>
-    </div>
-    <div class="fade-up">
-      <h2 class="sec-title">Cześć👋</h2>
-      <p class="sec-sub">Jestem nauczycielką angielskiego z pasją do pomagania Polakom — szczególnie tym, którzy kiedyś stracili wiarę, że anglieski "to nie jest dla nich". Moje lekcje są praktyczne, ciepłe i skupione na tym, czego naprawdę potrzebujesz w pracy, życiu za granicą lub w podrózy.</p>
-      <ul class="about-pts">
-        <li>Przeprowadziłam wiele szkoleń oraz lekcji indiwidualnych. Od klasycznych korków, przygotowania do profesionalnych prezentacji, czy pomocy w nawiazaniu nowych znajomosci gdzie jezyk był problemem. </li>
-        <li>Lekcje indywidualne i grupowe — w pełni online</li>
-        <li>Angielski dopasowany do Twojej branży i danych sytuacji</li>
-        <li>Notatki, materiały i ćwiczenia po każdej lekcji</li>
-        <li>Elastyczne godziny — rano, wieczorem, w weekendy</li>
-      </ul>
-      <a href="#kontakt" class="btn-p" style="margin-top:1.5rem;display:inline-block">Napisz do mnie →</a>
-    </div>
-  </div>
-</section>
- 
-<section id="zajecia">
-  <div class="sec-label fade-up">Oferta</div>
-  <h2 class="sec-title fade-up">Zajęcia dla każdego</h2>
-  <p class="sec-sub fade-up">Indywidualne, grupowe, warsztaty i szkolenia firmowe. Ceny ustalamy razem — napisz do mnie i znajdziemy coś dla Ciebie.</p>
-  <div class="cg">
-    <div class="cc fade-up"><div class="cc-ic">👤</div><div class="cc-title">Lekcje indywidualne</div><p class="cc-desc">Pełna uwaga tylko dla Ciebie. Program dopasowany do Twoich celów, tempa i branży — od zera do pewności siebie.</p><div class="cc-price">Cena <small>do ustalenia</small></div><p class="cc-note">✉️ Napisz, żeby umówić bezpłatną próbną</p></div>
-    <div class="cc hot fade-up"><span class="hot-badge">Popularne</span><div class="cc-ic">👥</div><div class="cc-title">Zajęcia grupowe</div><p class="cc-desc">Małe grupy tematyczne — dla kierowców, opiekunów, au pair. Uczycie się razem, motywujecie nawzajem i płacicie mniej.</p><div class="cc-price">Cena <small>do ustalenia</small></div><p class="cc-note">✉️ Możliwe grupy ze znajomych lub z firmy</p></div>
-    <div class="cc fade-up"><div class="cc-ic">🎯</div><div class="cc-title">Warsztaty tematyczne</div><p class="cc-desc">Jednorazowe lub cykliczne warsztaty: angielski dla opiekunów, au pair, pracowników sezonowych, angielski na wakacje.</p><div class="cc-price">Cena <small>do ustalenia</small></div><p class="cc-note">✉️ Zapytaj o najbliższy termin</p></div>
-    <div class="cc fade-up"><div class="cc-ic">🏢</div><div class="cc-title">Szkolenia firmowe</div><p class="cc-desc">Angielski dla całego zespołu — maile, rozmowy z klientami, prezentacje. Indywidualna wycena dla firm.</p><div class="cc-price">Wycena <small>indywidualna</small></div><p class="cc-note">✉️ Skontaktuj się po ofertę</p></div>
-  </div>
-</section>
- 
-<section id="portfolio">
-  <div class="sec-label fade-up">Moje materiały</div>
-  <h2 class="sec-title fade-up">Portfolio</h2>
-  <p class="sec-sub fade-up">Materiały, narzędzia i warsztaty, które tworzę dla moich kursantów — praktyczne, dopasowane do życia za granicą.</p>
-  <div style="margin-top:2.25rem" class="fade-up">
-    <div class="port-tabs">
-      <button class="ptab active" onclick="fp(this,'all')">Wszystkie</button>
-      <button class="ptab" onclick="fp(this,'speaking')">Speaking</button>
-      <button class="ptab" onclick="fp(this,'grammar')">Gramatyka</button>
-      <button class="ptab" onclick="fp(this,'corporate')">Corporate</button>
-      <button class="ptab" onclick="fp(this,'warsztaty')">Warsztaty</button>
-    </div>
-    <div class="pg" id="pgrid">
-      <div class="pi" data-c="speaking"><div class="pt t2">🗣️</div><div class="pi-info"><h4>Speaking — rozmowy w pracy</h4><p>Ćwiczenia konwersacyjne dla dorosłych</p></div></div>
-      <div class="pi" data-c="speaking"><div class="pt t1">🎙️</div><div class="pi-info"><h4>Wymowa i pewność siebie</h4><p>Mów zrozumiale, bez kompleksów</p></div></div>
-      <div class="pi" data-c="grammar"><div class="pt t3">📝</div><div class="pi-info"><h4>Gramatyka A1–B2</h4><p>Ćwiczenia dopasowane do poziomu</p></div></div>
-      <div class="pi" data-c="grammar"><div class="pt t4">📖</div><div class="pi-info"><h4>Czasy angielskie po ludzku</h4><p>Bez żargonu, z przykładami z życia</p></div></div>
-      <div class="pi" data-c="corporate"><div class="pt t5">💼</div><div class="pi-info"><h4>Maile biznesowe</h4><p>Szablony i zwroty na każdą okazję</p></div></div>
-      <div class="pi" data-c="corporate"><div class="pt t3">📊</div><div class="pi-info"><h4>Prezentacje po angielsku</h4><p>Mów pewnie na spotkaniach i online</p></div></div>
-      <div class="pi" data-c="warsztaty"><div class="pt t1">🚛</div><div class="pi-info"><h4>Angielski dla kierowców</h4><p>Granice, stacje, dokumenty, klienci</p></div></div>
-      <div class="pi" data-c="warsztaty"><div class="pt t2">👵</div><div class="pi-info"><h4>Angielski dla opiekunów</h4><p>Komunikacja z podopiecznymi i rodziną</p></div></div>
-      <div class="pi" data-c="warsztaty"><div class="pt t4">👩‍👧</div><div class="pi-info"><h4>Angielski dla au pair</h4><p>Rodzina, dzieci, dom — słownictwo i dialogi</p></div></div>
-    </div>
-  </div>
-</section>
- 
-<div class="eb-bg" id="ebooki">
-  <div class="eb-inner">
-    <div class="sec-label">Ebooki</div>
-    <h2 class="sec-title">Ucz się kiedy chcesz</h2>
-    <p class="sec-sub">Praktyczne ebooki dla Polaków — do konkretnych celów, w konkretnych sytuacjach. Pobierasz raz, używasz całe życie.</p>
-    <div class="eb-grid">
-      <div class="eb"><div class="eb-cover ec1">🤔</div><div class="eb-tag">Dla każdego</div><div class="eb-title">Dlaczego angielski jest taki trudny?</div><p class="eb-desc">Poznaj przyczyny frustracji i dowiedz się, jak przestać walczyć z językiem.</p><div class="eb-price">29 zł</div></div>
-      <div class="eb"><div class="eb-cover ec2">💼</div><span class="eb-new">Nowy</span><div class="eb-tag">Praca w biurze</div><div class="eb-title">Corporate English — angielski w pracy</div><p class="eb-desc">Maile, spotkania, small talk i prezentacje. Pewnie i profesjonalnie.</p><div class="eb-price">39 zł</div></div>
-      <div class="eb"><div class="eb-cover ec3">✈️</div><div class="eb-tag">Wakacje — podstawy</div><div class="eb-title">Wakacyjne minimum — dasz radę!</div><p class="eb-desc">Lotnisko, hotel, restauracja, zakupy. Zwroty, które wystarczą na urlop.</p><div class="eb-price">19 zł</div></div>
-      <div class="eb"><div class="eb-cover ec4">🌍</div><div class="eb-tag">Wakacje — rozszerzony</div><div class="eb-title">Poza hotelem — odkryj świat po angielsku</div><p class="eb-desc">Transport, zwiedzanie, miejscowi, nagłe sytuacje. Wyjdź poza strefę komfortu.</p><div class="eb-price">29 zł</div></div>
-      <div class="eb"><div class="eb-cover ec5">🚛</div><div class="eb-tag">Praca za granicą</div><div class="eb-title">Angielski dla Polaków za granicą</div><p class="eb-desc">Dla kierowców, opiekunów, au pair i pracowników sezonowych. Niemcy, Holandia, UK i więcej.</p><div class="eb-price">35 zł</div></div>
-    </div>
-    <p style="margin-top:1.25rem;font-size:0.76rem;color:rgba(255,255,255,0.35)">* Ebooki dostępne jako PDF. Napisz do mnie, żeby zamówić.</p>
-  </div>
 </div>
- 
-<section id="opinie">
-  <div class="sec-label fade-up">Opinie</div>
-  <h2 class="sec-title fade-up">Co mówią moi kursanci</h2>
-  <div class="tg">
-    <div class="tc fade-up"><div class="tc-stars">★★★★★</div><p class="tc-q">"Bałam się angielskiego od liceum. Kasia sprawiła, że przestałam się wstydzić błędów... I nabrałam jezyka w buzi! Teraz rozmawiam, może jeszcze nie perfekcyjnie ale nie boje sie mówić!"</p><div class="tc-who"><div class="tav av1">KW</div><div class="twho"><strong>Kasia W.</strong>Opiekunka osób starszych, Niemcy</div></div></div>
-    <div class="tc fade-up"><div class="tc-stars">★★★★★</div><p class="tc-q">"Jako kierowca stwierdzilem ze minimum angielskiego mi wystarczy ale się... bardzo pomyliłem. Polecam lekcje 1:1, bo można pogadać o wszystkim i niczym po angielsku. "</p><div class="tc-who"><div class="tav av2">MW</div><div class="twho"><strong>Marek W.</strong>Kierowca ciężarówki, trasy EU</div></div></div>
-    <div class="tc fade-up"><div class="tc-stars">★★★★★</div><p class="tc-q">"Lekcje z Kasią to coś więcej niż angielski — to terapia ze stresem językowym (nie to nie przesada :))  Pomogłaś mi bardzo przed wyjazdem. Dziękuję ci prostu z serduszka <3"</p><div class="tc-who"><div class="tav av3">AN</div><div class="twho"><strong>Ania N.</strong>Au pair, Irlandia</div></div></div>
-    <div class="tc fade-up"><div class="tc-stars">★★★★★</div><p class="tc-q">"Moja pierwsza praca w korpo mnie prawie zmiadżyła, co rusz nowe słówka na każdym callu.. Dzieki za cierplowść!"</p><div class="tc-who"><div class="tav av4">PR</div><div class="twho"><strong>Piotr R.</strong>Manager, firma międzynarodowa</div></div></div>
-  </div>
+
+<section id="oferta">
+<h2 class="section-title">Co możesz u mnie zrobić</h2>
+<p class="section-sub">Zajęcia dopasowane do Twojego poziomu i celu — nie uczysz się wszystkiego, tylko tego, co potrzebne.</p>
+
+<div class="grid">
+<div class="card">
+<h3>💬 Konwersacje</h3>
+<p>Mówisz od pierwszej lekcji — naturalnie, bez stresu.</p>
+<div class="price">od 1 lekcji</div>
+</div>
+
+<div class="card">
+<h3>🏢 Angielski do pracy</h3>
+<p>Email, spotkania, rozmowy z klientami.</p>
+<div class="price">B2 / C1 focus</div>
+</div>
+
+<div class="card">
+<h3>🚀 Intensywny boost</h3>
+<p>Szybki progres w krótkim czasie.</p>
+<div class="price">program 1:1</div>
+</div>
+</div>
 </section>
- 
+
+<section>
+<h2 class="section-title">Dlaczego działa</h2>
+<p class="section-sub">Bo uczysz się jak mózg naprawdę zapamiętuje język — przez użycie, nie teorię.</p>
+
+<div class="grid">
+<div class="card">
+<h3>🧠 Praktyka</h3>
+<p>Zero suchej gramatyki — tylko realne zdania.</p>
+</div>
+
+<div class="card">
+<h3>🔥 Motywacja</h3>
+<p>Widoczny progres już po kilku lekcjach.</p>
+</div>
+
+<div class="card">
+<h3>🎯 Personalizacja</h3>
+<p>Każda lekcja pod Twój cel.</p>
+</div>
+</div>
+</section>
+
+<section class="cta-section">
+<h2>Twoja pierwsza lekcja może być dziś</h2>
+<p>Bez zobowiązań — sprawdzasz, czy to dla Ciebie.</p>
+<br>
+<a class="btn-primary" href="#kontakt">Zaczynam</a>
+</section>
+
 <section id="kontakt">
-  <div class="sec-label fade-up">Zaczynamy?</div>
-  <h2 class="sec-title fade-up">Pierwsza lekcja jest bezpłatna</h2>
-  <p class="sec-sub fade-up">Bez zobowiązań, bez oceniania. Po prostu pogadamy — o Twoich celach, lękach i o tym, jak mogę Ci pomóc.</p>
-  <div class="contact-wrap">
-    <div class="ci fade-up">
-      <h3>Jak to wygląda?</h3>
-      <p>Napisz do mnie, a odezwę się w ciągu 24 godzin. Razem ustalimy termin bezpłatnej lekcji próbnej (30 min)</p>
-      <ul class="csteps">
-        <li><div class="csnum">1</div><div class="cstxt"><strong>Wypełnij formularz</strong>Powiedz mi o sobie i swoich celach</div></li>
-        <li><div class="csnum">2</div><div class="cstxt"><strong>Odezwę się w 24h</strong>Razem ustalimy termin i szczegóły</div></li>
-        <li><div class="csnum">3</div><div class="cstxt"><strong>Bezpłatna lekcja próbna</strong>30 minut na w pełni online lub telefonicznie — zero stresu</div></li>
-        <li><div class="csnum">4</div><div class="cstxt"><strong>Zaczynamy razem!</strong>Wybieramy plan i ruszamy z nauką</div></li>
-      </ul>
-    </div>
-    <div class="cf fade-up">
-      <form action="https://formspree.io/f/mredgdgq" method="POST" id="yeyu-form">
-        <div class="frow">
-          <div class="fg"><label>Imię</label><input type="text" name="imie" placeholder="Anna" required></div>
-          <div class="fg"><label>Email</label><input type="email" name="email" placeholder="anna@email.com" required></div>
-        </div>
-        <div class="fg"><label>Skąd piszesz / gdzie pracujesz?</label><input type="text" name="lokalizacja" placeholder="np. Polska, Niemcy, Holandia..."></div>
-        <div class="fg"><label>Co Cię interesuje?</label>
-          <select name="zainteresowanie">
-            <option>Lekcje indywidualne</option>
-            <option>Zajęcia grupowe</option>
-            <option>Warsztat tematyczny</option>
-            <option>Ebook</option>
-            <option>Szkolenie firmowe</option>
-            <option>Nie wiem jeszcze — chcę porozmawiać</option>
-          </select>
-        </div>
-        <div class="fg"><label>Twój poziom angielskiego</label>
-          <select name="poziom">
-            <option>Zupełny początkujący</option>
-            <option>Podstawowy (A2)</option>
-            <option>Średniozaawansowany (B1)</option>
-            <option>Wyższy średni (B2)</option>
-            <option>Zaawansowany (C1+)</option>
-            <option>Nie wiem / trudno ocenić</option>
-          </select>
-        </div>
-        <div class="fg"><label>Co chcesz osiągnąć? (opcjonalnie)</label><textarea name="wiadomosc" placeholder="np. Potrzebuję angielskiego do pracy w Niemczech, albo chcę przestać bać się mówienia..."></textarea></div>
-        <button type="submit" class="fsub" id="fsub">Wyślij — zaczynam swoją przygodę! 🚀</button>
-      </form>
-      <div id="sukces" style="display:none;text-align:center;padding:2rem 1rem">
-        <div style="font-size:2.5rem;margin-bottom:0.75rem">🌟</div>
-        <p style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--brown);margin-bottom:0.5rem">Wysłano! Dziękuję!</p>
-        <p style="font-size:0.88rem;color:var(--muted)">Odezwę się wkrótce! </p>
-      </div>
-    </div>
-  </div>
+<h2 class="section-title">Kontakt</h2>
+<p class="section-sub">Napisz i dobierzemy plan nauki dla Ciebie.</p>
+
+<div class="card">
+<p>📩 Formularz z GitHub Pages + Formspree już działa</p>
+</div>
 </section>
- 
+
 <footer>
-  <div class="fi">
-    <div><div class="fl">Jeju!</div><span class="fl-s">jakie to proste — angielski online</span></div>
-    <ul class="flinks">
-      <li><a href="#o-mnie">O mnie</a></li>
-      <li><a href="#zajecia">Zajęcia</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#ebooki">Ebooki</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
-    </ul>
-  </div>
-  <div class="fcopy">© 2026 Jeju! jakie to proste — nauka angielskiego online dla Polaków. Wszelkie prawa zastrzeżone.</div>
+© 2026 JEJU! — angielski online
 </footer>
- 
-<script>
-document.querySelectorAll('.fade-up').forEach(el=>{
-  new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});
-  },{threshold:0.08}).observe(el);
-});
- 
-function fp(btn,cat){
-  document.querySelectorAll('.ptab').forEach(t=>t.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.pi').forEach(i=>{
-    i.style.display=(cat==='all'||i.dataset.c===cat)?'block':'none';
-  });
-}
- 
-function toggleMenu(){
-  const links=document.querySelector('.nav-links');
-  if(links.style.display==='flex'){
-    links.style.cssText='';
-  } else {
-    links.style.display='flex';
-    links.style.flexDirection='column';
-    links.style.position='fixed';
-    links.style.top='60px';
-    links.style.left='0';
-    links.style.right='0';
-    links.style.background='rgba(253,248,242,0.98)';
-    links.style.padding='1rem 2rem 1.5rem';
-    links.style.borderBottom='1px solid rgba(196,97,42,0.15)';
-    links.style.gap='1rem';
-    links.style.zIndex='99';
-  }
-}
- 
-const form = document.getElementById('yeyu-form');
-if(form){
-  form.addEventListener('submit', async function(e){
-    e.preventDefault();
-    const btn = document.getElementById('fsub');
-    btn.textContent = 'Wysyłam...';
-    btn.disabled = true;
-    const data = new FormData(form);
-    const response = await fetch(form.action, {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    });
-    if(response.ok){
-      form.style.display = 'none';
-      document.getElementById('sukces').style.display = 'block';
-    } else {
-      btn.textContent = 'Coś poszło nie tak — spróbuj ponownie';
-      btn.style.background = '#E24B4A';
-      btn.disabled = false;
-    }
-  });
-}
-</script>
+
 </body>
 </html>
- 
