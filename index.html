@@ -4,475 +4,831 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jeju! jakie to proste — nauka angielskiego online lub telefonicznie</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%23B85C2A'/></svg>">
 <meta name="description" content="Angielski online dla Polaków — lekcje indywidualne i grupowe, warsztaty, ebooki. Dla kierowców, opiekunów, au pair i wszystkich, którzy chcą mówić po angielsku bez stresu.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --cream:#FDF8F2;--brown:#3D2B1F;--terra:#C4612A;--terra-light:#F0C4A8;
-  --sage:#7A9E7E;--sage-light:#D4E8D5;--gold:#D4A843;--muted:#7A6558;
-  --white:#fff;--polish-red:#DC143C;
+  --ink:#1A1410;
+  --warm:#2D2118;
+  --terra:#B85C2A;
+  --terra-soft:#E8C4A8;
+  --terra-pale:#F9F0E8;
+  --sage:#5C7A60;
+  --sage-pale:#E8F0E9;
+  --gold:#C4962A;
+  --gold-pale:#F5EDD5;
+  --muted:#6B5D54;
+  --line:rgba(184,92,42,0.14);
+  --white:#fff;
+  --cream:#FDFAF6;
+  --smoke:#F5F0EA;
+  --polish-red:#DC143C;
 }
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--brown);overflow-x:hidden}
- 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0.85rem 2rem;display:flex;align-items:center;justify-content:space-between;background:rgba(253,248,242,0.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(196,97,42,0.12)}
-.logo-wrap{display:flex;flex-direction:column;line-height:1}
-.logo{font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--terra)}
-.logo-tag{font-size:0.58rem;color:var(--muted);letter-spacing:1.8px;text-transform:uppercase;margin-top:1px}
-.nav-links{display:flex;gap:1.4rem;list-style:none}
-.nav-links a{text-decoration:none;color:var(--muted);font-size:0.8rem;font-weight:500;transition:color 0.2s}
-.nav-links a:hover{color:var(--terra)}
-.nav-cta{background:var(--terra);color:white;padding:0.48rem 1.15rem;border-radius:999px;font-size:0.8rem;font-weight:500;text-decoration:none;transition:background 0.2s}
-.nav-cta:hover{background:var(--brown)}
-.nav-mob{display:none;background:none;border:none;cursor:pointer;font-size:1.4rem;color:var(--terra)}
- 
-.hero{min-height:100vh;padding:7rem 2rem 4rem;position:relative;overflow:hidden;display:flex;align-items:center;background:var(--cream)}
-.hero-bg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Playfair Display',serif;font-size:18vw;color:rgba(196,97,42,0.04);white-space:nowrap;pointer-events:none;z-index:0;font-weight:600}
-.hero-inner{max-width:1100px;margin:0 auto;width:100%;position:relative;z-index:1;display:grid;grid-template-columns:1.15fr 0.85fr;gap:3rem;align-items:center}
-.hero-flag{display:flex;align-items:center;gap:8px;margin-bottom:1.25rem}
-.flag{width:26px;height:17px;border-radius:3px;overflow:hidden;display:flex;flex-direction:column;border:1px solid rgba(0,0,0,0.08)}
-.fw{flex:1;background:#fff}.fr{flex:1;background:var(--polish-red)}
-.flag-txt{font-size:0.72rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
-.hero-logo{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,5vw,4rem);color:var(--terra);line-height:1;margin-bottom:0.3rem}
-.hero-logo span{font-style:italic;font-size:clamp(1.2rem,2.5vw,1.8rem);color:var(--brown);display:block;margin-top:0.15rem}
-.hero-tagline{font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2vw,1.55rem);color:var(--brown);line-height:1.4;margin:1rem 0 0.75rem;font-style:italic}
-.hero-tagline strong{font-style:normal;color:var(--terra)}
-.hero-sub{font-size:0.95rem;color:var(--muted);line-height:1.85;margin-bottom:1.75rem;font-weight:300;max-width:500px}
-.hero-sub em{color:var(--terra);font-style:normal;font-weight:500}
-.hero-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:2rem}
-.btn-p{background:var(--terra);color:white;padding:0.75rem 1.6rem;border-radius:999px;text-decoration:none;font-weight:500;font-size:0.88rem;transition:all 0.2s;display:inline-block;border:none;cursor:pointer}
-.btn-p:hover{background:var(--brown);transform:translateY(-1px)}
-.btn-s{background:transparent;color:var(--terra);padding:0.75rem 1.6rem;border-radius:999px;text-decoration:none;font-weight:500;font-size:0.88rem;border:1.5px solid var(--terra);transition:all 0.2s;display:inline-block}
-.btn-s:hover{background:var(--terra-light)}
-.hero-proof{display:flex;gap:1.5rem;flex-wrap:wrap}
-.proof-n{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--terra);line-height:1}
-.proof-t{font-size:0.72rem;color:var(--muted);margin-top:2px}
-.hero-right{display:flex;flex-direction:column;gap:10px}
-.hcard{background:white;border-radius:14px;padding:1rem 1.15rem;border:1px solid rgba(196,97,42,0.1);display:flex;align-items:flex-start;gap:11px;transition:transform 0.2s}
-.hcard:hover{transform:translateX(4px)}
-.hcard-ic{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;margin-top:1px}
-.hcard-txt strong{display:block;font-size:0.85rem;color:var(--brown);margin-bottom:2px}
-.hcard-txt span{font-size:0.78rem;color:var(--muted);line-height:1.5}
-.ic1{background:var(--terra-light)}.ic2{background:var(--sage-light)}.ic3{background:#F5E9C8}.ic5{background:#D5E8F0}
- 
-.conf-sec{background:var(--brown);padding:5rem 2rem;position:relative;overflow:hidden}
-.conf-inner{max-width:1100px;margin:0 auto}
-.conf-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:2.5rem}
-.conf-quote{font-family:'Playfair Display',serif;font-size:1.05rem;color:rgba(255,255,255,0.75);line-height:1.8;font-style:italic;border-left:3px solid var(--terra);padding-left:1.25rem;margin:1.5rem 0}
-.conf-p{font-size:0.9rem;color:rgba(255,255,255,0.6);line-height:1.85;font-weight:300}
-.conf-p em{color:var(--terra-light);font-style:normal;font-weight:500}
-.conf-cards{display:flex;flex-direction:column;gap:1rem}
-.conf-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:1.25rem 1.4rem;display:flex;gap:12px;align-items:flex-start;transition:background 0.2s}
-.conf-card:hover{background:rgba(255,255,255,0.1)}
-.conf-card-ic{font-size:1.4rem;flex-shrink:0;margin-top:2px}
-.conf-card-txt strong{display:block;font-size:0.9rem;color:white;margin-bottom:4px}
-.conf-card-txt p{font-size:0.82rem;color:rgba(255,255,255,0.55);line-height:1.6}
- 
-section{padding:4.5rem 2rem;max-width:1100px;margin:0 auto}
-.sec-label{font-size:0.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--terra);margin-bottom:0.6rem}
-.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.65rem,2.6vw,2.15rem);color:var(--brown);margin-bottom:0.8rem;line-height:1.25}
-.sec-sub{color:var(--muted);font-size:0.92rem;line-height:1.8;max-width:580px;font-weight:300}
- 
-.about-grid{display:grid;grid-template-columns:0.8fr 1.2fr;gap:3.5rem;align-items:center;margin-top:2.5rem}
-.about-vis{position:relative}
-.about-box{width:100%;aspect-ratio:3/4;border-radius:24px;background:linear-gradient(145deg,var(--terra-light),var(--sage-light));display:flex;align-items:center;justify-content:center;font-size:5rem}
-.astat{position:absolute;background:white;border-radius:14px;padding:0.8rem 1rem;box-shadow:0 4px 20px rgba(61,43,31,0.12);text-align:center;border:1px solid rgba(196,97,42,0.1)}
-.astat.a1{bottom:-14px;right:-14px}
-.astat.a2{top:-14px;left:-14px;background:var(--terra)}
-.sn{font-family:'Playfair Display',serif;font-size:1.7rem;color:var(--terra);line-height:1}
-.a2 .sn{color:white;font-size:1.4rem}
-.st{font-size:0.67rem;color:var(--muted);margin-top:2px}
-.a2 .st{color:rgba(255,255,255,0.7)}
-.about-pts{list-style:none;margin-top:1.4rem;display:flex;flex-direction:column;gap:0.65rem}
-.about-pts li{display:flex;gap:9px;font-size:0.88rem;color:var(--muted);line-height:1.65;align-items:flex-start}
-.about-pts li::before{content:'✦';color:var(--terra);font-size:0.62rem;margin-top:5px;flex-shrink:0}
- 
-.cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.1rem;margin-top:2.5rem}
-.cc{background:white;border-radius:16px;padding:1.4rem;border:1px solid rgba(196,97,42,0.1);transition:transform 0.2s,box-shadow 0.2s;position:relative}
-.cc::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:16px 16px 0 0;background:var(--terra);opacity:0;transition:opacity 0.2s}
-.cc:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(61,43,31,0.09)}
-.cc:hover::after,.cc.hot::after{opacity:1}
-.cc.hot{border-color:rgba(196,97,42,0.35)}
-.cc-ic{font-size:1.4rem;margin-bottom:0.7rem}
-.cc-title{font-family:'Playfair Display',serif;font-size:1rem;color:var(--brown);margin-bottom:0.35rem}
-.cc-desc{font-size:0.82rem;color:var(--muted);line-height:1.65;margin-bottom:0.85rem}
-.cc-price{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--terra)}
-.cc-price small{font-family:'DM Sans',sans-serif;font-size:0.72rem;color:var(--muted);font-weight:300}
-.cc-note{font-size:0.72rem;color:var(--muted);margin-top:0.35rem;font-style:italic}
-.hot-badge{display:inline-block;background:var(--terra);color:white;font-size:0.65rem;font-weight:600;padding:2px 9px;border-radius:999px;margin-bottom:0.5rem}
- 
-.port-tabs{display:flex;gap:7px;margin-bottom:1.6rem;flex-wrap:wrap}
-.ptab{background:white;border:1px solid rgba(196,97,42,0.2);color:var(--muted);font-size:0.78rem;font-weight:500;padding:5px 14px;border-radius:999px;cursor:pointer;transition:all 0.18s;font-family:'DM Sans',sans-serif}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(253,250,246,0.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1160px;margin:0 auto;padding:0 2rem;height:66px;display:flex;align-items:center;justify-content:space-between}
+.logo-mark{display:flex;align-items:baseline;gap:0.4rem}
+.logo-main{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:600;color:var(--terra);letter-spacing:-0.5px}
+.logo-sub{font-size:0.68rem;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted)}
+.nav-links{display:flex;gap:0.25rem;list-style:none}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:0.8rem;font-weight:400;padding:0.4rem 0.75rem;border-radius:6px;transition:all 0.18s}
+.nav-links a:hover{color:var(--terra);background:var(--terra-pale)}
+.nav-actions{display:flex;align-items:center;gap:0.75rem}
+.nav-cta{background:var(--terra);color:white;padding:0.5rem 1.2rem;border-radius:8px;font-size:0.8rem;font-weight:500;text-decoration:none;transition:all 0.2s;letter-spacing:0.3px}
+.nav-cta:hover{background:var(--warm);transform:translateY(-1px);box-shadow:0 4px 14px rgba(184,92,42,0.28)}
+.nav-mob{display:none;background:none;border:none;cursor:pointer;color:var(--terra);font-size:1.3rem}
+
+/* ── HERO ── */
+.hero{min-height:100vh;padding:7.5rem 2rem 5rem;position:relative;overflow:hidden;background:var(--cream)}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:60px 60px;opacity:0.45;pointer-events:none}
+.hero-glow{position:absolute;top:-120px;right:-80px;width:600px;height:600px;background:radial-gradient(circle,rgba(184,92,42,0.09) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:1160px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1.1fr 0.9fr;gap:4rem;align-items:center}
+
+.badge-row{display:flex;align-items:center;gap:10px;margin-bottom:1.5rem}
+.badge{display:inline-flex;align-items:center;gap:5px;background:var(--terra-pale);border:1px solid rgba(184,92,42,0.22);border-radius:6px;padding:4px 10px}
+.badge-dot{width:6px;height:6px;background:#3DAA5C;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.85)}}
+.badge span{font-size:0.7rem;font-weight:500;color:var(--terra);letter-spacing:0.5px}
+.flag{display:flex;flex-direction:column;overflow:hidden;border-radius:2px;border:1px solid rgba(0,0,0,0.1)}
+.fw{width:18px;height:6px;background:#fff}.fr{width:18px;height:6px;background:var(--polish-red)}
+
+.hero-eyebrow{font-size:0.7rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--terra);margin-bottom:0.65rem}
+h1.hero-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,4.5vw,4.2rem);line-height:1.1;color:var(--ink);margin-bottom:0.5rem;font-weight:500}
+h1.hero-h em{color:var(--terra);font-style:italic}
+.hero-tagline{font-family:'Cormorant Garamond',serif;font-size:clamp(1.1rem,1.6vw,1.35rem);color:var(--muted);font-style:italic;line-height:1.55;margin-bottom:1.5rem;max-width:480px}
+.hero-body{font-size:0.92rem;color:var(--muted);line-height:1.9;margin-bottom:2rem;font-weight:300;max-width:480px}
+.hero-body strong{color:var(--terra);font-weight:500}
+
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:2.5rem}
+.btn-primary{background:var(--terra);color:white;padding:0.78rem 1.7rem;border-radius:8px;text-decoration:none;font-weight:500;font-size:0.88rem;transition:all 0.2s;display:inline-flex;align-items:center;gap:7px;border:none;cursor:pointer;letter-spacing:0.3px}
+.btn-primary:hover{background:var(--warm);transform:translateY(-2px);box-shadow:0 8px 24px rgba(184,92,42,0.3)}
+.btn-secondary{background:transparent;color:var(--terra);padding:0.78rem 1.7rem;border-radius:8px;text-decoration:none;font-weight:500;font-size:0.88rem;border:1.5px solid rgba(184,92,42,0.4);transition:all 0.2s;display:inline-flex;align-items:center;gap:7px}
+.btn-secondary:hover{background:var(--terra-pale);border-color:var(--terra)}
+
+.trust-strip{display:flex;gap:2rem;flex-wrap:wrap;padding-top:2rem;border-top:1px solid var(--line)}
+.trust-item{text-align:left}
+.trust-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--terra);line-height:1}
+.trust-label{font-size:0.7rem;color:var(--muted);margin-top:2px;font-weight:400;letter-spacing:0.3px}
+
+/* audience cards */
+.hero-right{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.aud-card{background:white;border-radius:12px;padding:1rem;border:1px solid var(--line);transition:all 0.2s;position:relative;overflow:hidden}
+.aud-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--terra);transform:scaleX(0);transform-origin:left;transition:transform 0.25s}
+.aud-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(26,20,16,0.08)}
+.aud-card:hover::before{transform:scaleX(1)}
+.aud-card.b2b-card{border-color:rgba(92,122,96,0.35);background:linear-gradient(135deg,white,var(--sage-pale))}
+.aud-card.b2b-card::before{background:var(--sage)}
+.aud-ic{font-size:1.5rem;margin-bottom:0.5rem}
+.aud-title{font-size:0.82rem;font-weight:600;color:var(--ink);margin-bottom:2px}
+.aud-desc{font-size:0.73rem;color:var(--muted);line-height:1.5}
+.b2b-tag{display:inline-block;font-size:0.6rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--sage);background:var(--sage-pale);padding:2px 7px;border-radius:4px;margin-bottom:5px}
+
+/* ── CLIENT LOGOS / TRUST BAR ── */
+.trust-bar{background:var(--smoke);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1.25rem 2rem}
+.trust-bar-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap}
+.tb-label{font-size:0.68rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.tb-divider{width:1px;height:22px;background:var(--line)}
+.tb-logos{display:flex;align-items:center;gap:2.5rem;flex-wrap:wrap;justify-content:center}
+.tb-logo{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--muted);opacity:0.5;letter-spacing:0.5px;transition:opacity 0.2s}
+.tb-logo:hover{opacity:0.85}
+
+/* ── B2B SECTION ── */
+.b2b-section{background:var(--ink);padding:6rem 2rem;position:relative;overflow:hidden}
+.b2b-section::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(92,122,96,0.08) 0%,transparent 60%),linear-gradient(315deg,rgba(184,92,42,0.06) 0%,transparent 60%)}
+.b2b-inner{max-width:1160px;margin:0 auto;position:relative}
+.b2b-header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-bottom:3.5rem}
+.b2b-label{font-size:0.68rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--sage);margin-bottom:0.65rem}
+.b2b-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3vw,2.8rem);color:white;font-weight:500;line-height:1.2;margin-bottom:1rem}
+.b2b-title em{color:var(--terra-soft);font-style:italic}
+.b2b-body{font-size:0.88rem;color:rgba(255,255,255,0.5);line-height:1.95;font-weight:300}
+.b2b-body strong{color:rgba(255,255,255,0.8);font-weight:500}
+.b2b-right{padding-top:2.5rem}
+.b2b-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:1.5rem}
+.bstat{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.1rem}
+.bstat-n{font-family:'Cormorant Garamond',serif;font-size:2rem;color:white;line-height:1;margin-bottom:3px;font-weight:500}
+.bstat-l{font-size:0.72rem;color:rgba(255,255,255,0.4)}
+.b2b-quote{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(255,255,255,0.6);font-style:italic;border-left:2px solid var(--terra);padding-left:1rem;line-height:1.7}
+
+.b2b-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.b2b-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:1.5rem;transition:all 0.2s;position:relative;overflow:hidden}
+.b2b-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--sage),transparent);opacity:0;transition:opacity 0.25s}
+.b2b-card:hover{background:rgba(255,255,255,0.08);transform:translateY(-3px)}
+.b2b-card:hover::after{opacity:1}
+.b2b-card-ic{font-size:1.6rem;margin-bottom:0.9rem}
+.b2b-card h4{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:white;margin-bottom:0.45rem;font-weight:500}
+.b2b-card p{font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.7}
+.b2b-card ul{list-style:none;display:flex;flex-direction:column;gap:0.35rem;margin-top:0.75rem}
+.b2b-card ul li{font-size:0.77rem;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:6px}
+.b2b-card ul li::before{content:'';width:5px;height:5px;background:var(--sage);border-radius:50%;flex-shrink:0}
+.b2b-cta{margin-top:2.5rem;display:flex;align-items:center;gap:1rem}
+.btn-sage{background:var(--sage);color:white;padding:0.78rem 1.7rem;border-radius:8px;text-decoration:none;font-weight:500;font-size:0.88rem;transition:all 0.2s;display:inline-flex;align-items:center;gap:7px}
+.btn-sage:hover{background:#4A6A4E;transform:translateY(-2px);box-shadow:0 8px 24px rgba(92,122,96,0.35)}
+.btn-ghost{color:rgba(255,255,255,0.5);font-size:0.83rem;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:1px;transition:all 0.2s}
+.btn-ghost:hover{color:white;border-color:white}
+
+/* ── VALUE / HOW ── */
+.value-sec{padding:6rem 2rem;background:white}
+.value-inner{max-width:1160px;margin:0 auto}
+.value-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:center;margin-top:3rem}
+.value-left h3{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,2.5vw,2.4rem);color:var(--ink);line-height:1.2;margin-bottom:1rem;font-weight:500}
+.value-left h3 em{color:var(--terra);font-style:italic}
+.value-left p{font-size:0.88rem;color:var(--muted);line-height:1.95;font-weight:300;margin-bottom:1.25rem}
+.value-left blockquote{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--muted);font-style:italic;border-left:2px solid var(--terra);padding-left:1rem;margin:1.5rem 0;line-height:1.65}
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:0.85rem}
+.pillar{background:var(--cream);border-radius:12px;padding:1.1rem;border:1px solid var(--line);transition:all 0.2s}
+.pillar:hover{border-color:rgba(184,92,42,0.3);box-shadow:0 4px 16px rgba(26,20,16,0.06);transform:translateY(-2px)}
+.pillar-ic{font-size:1.2rem;margin-bottom:0.5rem}
+.pillar h5{font-size:0.85rem;font-weight:600;color:var(--ink);margin-bottom:3px}
+.pillar p{font-size:0.77rem;color:var(--muted);line-height:1.6}
+
+/* ── ABOUT ── */
+.about-sec{padding:6rem 2rem;background:var(--cream)}
+.about-inner{max-width:1160px;margin:0 auto}
+.about-grid{display:grid;grid-template-columns:0.75fr 1.25fr;gap:4.5rem;align-items:center;margin-top:2.5rem}
+.about-visual{position:relative}
+.av-box{width:100%;aspect-ratio:3/4;border-radius:20px;background:linear-gradient(155deg,var(--terra-soft),var(--sage-pale));display:flex;align-items:center;justify-content:center;font-size:5rem;overflow:hidden;position:relative}
+.av-box::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(26,20,16,0.12))}
+.av-chip{position:absolute;background:white;border-radius:10px;padding:0.7rem 0.9rem;box-shadow:0 6px 24px rgba(26,20,16,0.1);border:1px solid var(--line)}
+.av-chip.c1{bottom:-12px;right:-12px}
+.av-chip.c2{top:-12px;left:-12px;background:var(--terra);border-color:transparent}
+.chip-n{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--terra);line-height:1;font-weight:600}
+.c2 .chip-n{color:white;font-size:1.3rem}
+.chip-l{font-size:0.64rem;color:var(--muted);margin-top:1px}
+.c2 .chip-l{color:rgba(255,255,255,0.7)}
+
+.about-content h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,2.5vw,2.4rem);color:var(--ink);margin-bottom:0.6rem;font-weight:500}
+.about-content .sec-sub{font-size:0.9rem;color:var(--muted);line-height:1.9;font-weight:300;margin-bottom:1.5rem;max-width:520px}
+.about-pts{list-style:none;display:flex;flex-direction:column;gap:0.6rem;margin-bottom:1.75rem}
+.about-pts li{display:flex;gap:10px;font-size:0.86rem;color:var(--muted);line-height:1.65;align-items:flex-start}
+.about-pts li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--terra);flex-shrink:0;margin-top:7px}
+.cert-row{display:flex;gap:0.75rem;flex-wrap:wrap}
+.cert{display:inline-flex;align-items:center;gap:6px;background:white;border:1px solid var(--line);border-radius:6px;padding:5px 10px;font-size:0.72rem;color:var(--muted);font-weight:500}
+
+/* ── OFFERS ── */
+.offers-sec{padding:6rem 2rem;background:var(--smoke)}
+.offers-inner{max-width:1160px;margin:0 auto}
+.audience-toggle{display:flex;gap:0;background:white;border:1px solid var(--line);border-radius:10px;padding:4px;width:fit-content;margin:2rem 0 2.25rem}
+.atbtn{background:none;border:none;font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:500;color:var(--muted);padding:0.5rem 1.25rem;border-radius:7px;cursor:pointer;transition:all 0.2s}
+.atbtn.active{background:var(--terra);color:white}
+.offers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.1rem}
+.offer-card{background:white;border-radius:14px;padding:1.4rem;border:1px solid var(--line);transition:all 0.2s;position:relative}
+.offer-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:14px 14px 0 0;background:var(--terra);transform:scaleX(0);transform-origin:left;transition:transform 0.25s}
+.offer-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(26,20,16,0.08)}
+.offer-card:hover::before,.offer-card.featured::before{transform:scaleX(1)}
+.offer-card.featured{border-color:rgba(184,92,42,0.3)}
+.offer-card.b2b-offer::before{background:var(--sage)}
+.offer-card.b2b-offer:hover{border-color:rgba(92,122,96,0.35)}
+.offer-badge{display:inline-block;font-size:0.62rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-bottom:0.6rem}
+.ob-hot{background:var(--terra-pale);color:var(--terra)}
+.ob-b2b{background:var(--sage-pale);color:var(--sage)}
+.offer-ic{font-size:1.4rem;margin-bottom:0.6rem}
+.offer-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--ink);margin-bottom:0.35rem;font-weight:500}
+.offer-desc{font-size:0.8rem;color:var(--muted);line-height:1.7;margin-bottom:1rem}
+.offer-price{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--terra)}
+.offer-price small{font-family:'Outfit',sans-serif;font-size:0.7rem;color:var(--muted);font-weight:300}
+.offer-note{font-size:0.7rem;color:var(--muted);margin-top:0.35rem;font-style:italic}
+.offer-features{list-style:none;margin:0.85rem 0 1rem;display:flex;flex-direction:column;gap:0.35rem}
+.offer-features li{font-size:0.77rem;color:var(--muted);display:flex;align-items:center;gap:6px}
+.offer-features li::before{content:'✓';color:var(--sage);font-weight:600;font-size:0.72rem;flex-shrink:0}
+
+/* b2b panel hidden by default */
+.b2b-panel{display:none}
+.ind-panel{}
+
+/* ── PORTFOLIO ── */
+.port-sec{padding:6rem 2rem;background:white}
+.port-inner{max-width:1160px;margin:0 auto}
+.port-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:2rem}
+.ptab{background:var(--smoke);border:1px solid var(--line);color:var(--muted);font-size:0.77rem;font-weight:500;padding:5px 14px;border-radius:6px;cursor:pointer;transition:all 0.18s;font-family:'Outfit',sans-serif}
 .ptab:hover,.ptab.active{background:var(--terra);border-color:var(--terra);color:white}
-.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:1rem}
-.pi{background:white;border-radius:12px;overflow:hidden;border:1px solid rgba(196,97,42,0.08);transition:transform 0.2s,box-shadow 0.2s;cursor:pointer}
-.pi:hover{transform:translateY(-3px);box-shadow:0 7px 20px rgba(61,43,31,0.09)}
-.pt{height:100px;display:flex;align-items:center;justify-content:center;font-size:2rem}
-.t1{background:var(--terra-light)}.t2{background:var(--sage-light)}.t3{background:#F5E9C8}.t4{background:#E8D5F0}.t5{background:#D5E8F0}
-.pi-info{padding:0.8rem}
-.pi-info h4{font-family:'Playfair Display',serif;font-size:0.85rem;color:var(--brown);margin-bottom:2px}
-.pi-info p{font-size:0.73rem;color:var(--muted);line-height:1.5}
- 
-.eb-bg{background:var(--brown);padding:4.5rem 2rem}
-.eb-inner{max-width:1100px;margin:0 auto}
-.eb-inner .sec-title{color:white}
-.eb-inner .sec-label{color:var(--terra-light)}
-.eb-inner .sec-sub{color:rgba(255,255,255,0.55);max-width:580px}
-.eb-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.1rem;margin-top:2.25rem}
-.eb{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.09);border-radius:16px;padding:1.3rem;transition:background 0.2s,transform 0.2s;cursor:pointer;position:relative}
-.eb:hover{background:rgba(255,255,255,0.1);transform:translateY(-3px)}
-.eb-cover{height:105px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin-bottom:0.9rem}
-.ec1{background:linear-gradient(135deg,#C4612A,#E8935A)}
-.ec2{background:linear-gradient(135deg,#2d5e31,#7A9E7E)}
-.ec3{background:linear-gradient(135deg,#1a5276,#2e86c1)}
-.ec4{background:linear-gradient(135deg,#6c3483,#a569bd)}
-.ec5{background:linear-gradient(135deg,#b7950b,#D4A843)}
-.eb-tag{font-size:0.65rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--terra-light);margin-bottom:0.35rem}
-.eb-title{font-family:'Playfair Display',serif;font-size:0.92rem;color:white;margin-bottom:0.35rem;line-height:1.35}
-.eb-desc{font-size:0.76rem;color:rgba(255,255,255,0.5);line-height:1.6;margin-bottom:0.8rem}
-.eb-price{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--gold)}
-.eb-new{position:absolute;top:0.9rem;right:0.9rem;background:var(--terra);color:white;font-size:0.62rem;font-weight:600;padding:2px 7px;border-radius:999px}
- 
-.tg{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin-top:2.25rem}
-.tc{background:white;border-radius:14px;padding:1.3rem;border:1px solid rgba(196,97,42,0.1)}
-.tc-stars{color:var(--gold);font-size:0.8rem;margin-bottom:0.6rem;letter-spacing:1px}
-.tc-q{font-size:0.85rem;color:var(--muted);line-height:1.75;font-style:italic;margin-bottom:1rem;font-family:'Playfair Display',serif}
-.tc-who{display:flex;align-items:center;gap:9px}
+.port-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:1rem}
+.port-item{background:var(--cream);border-radius:12px;overflow:hidden;border:1px solid var(--line);transition:all 0.2s;cursor:pointer}
+.port-item:hover{transform:translateY(-3px);box-shadow:0 7px 22px rgba(26,20,16,0.08);border-color:rgba(184,92,42,0.25)}
+.port-thumb{height:100px;display:flex;align-items:center;justify-content:center;font-size:2rem}
+.pt1{background:var(--terra-pale)}.pt2{background:var(--sage-pale)}.pt3{background:var(--gold-pale)}.pt4{background:#EDE8F5}.pt5{background:#DFF0F5}
+.port-info{padding:0.85rem}
+.port-info h4{font-family:'Cormorant Garamond',serif;font-size:0.9rem;color:var(--ink);margin-bottom:3px;font-weight:500}
+.port-info p{font-size:0.72rem;color:var(--muted);line-height:1.5}
+
+/* ── EBOOKS ── */
+.ebook-sec{background:linear-gradient(165deg,var(--warm) 0%,#1A1410 100%);padding:6rem 2rem}
+.ebook-inner{max-width:1160px;margin:0 auto}
+.ebook-inner .sec-label{color:var(--terra-soft)}
+.ebook-inner .sec-title{color:white}
+.ebook-inner .sec-sub{color:rgba(255,255,255,0.45)}
+.ebook-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.1rem;margin-top:2.25rem}
+.eb{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:1.3rem;transition:all 0.2s;cursor:pointer;position:relative}
+.eb:hover{background:rgba(255,255,255,0.09);transform:translateY(-3px);border-color:rgba(255,255,255,0.14)}
+.eb-cover{height:105px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin-bottom:1rem}
+.ec1{background:linear-gradient(135deg,#B85C2A,#D98A5A)}
+.ec2{background:linear-gradient(135deg,#2d5e31,#5C7A60)}
+.ec3{background:linear-gradient(135deg,#1a4a70,#2e7cc1)}
+.ec4{background:linear-gradient(135deg,#5A2A7A,#9B59B6)}
+.ec5{background:linear-gradient(135deg,#7A5A0A,#C4962A)}
+.eb-tag{font-size:0.62rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--terra-soft);margin-bottom:0.35rem}
+.eb-title{font-family:'Cormorant Garamond',serif;font-size:0.95rem;color:white;margin-bottom:0.35rem;line-height:1.35;font-weight:500}
+.eb-desc{font-size:0.75rem;color:rgba(255,255,255,0.45);line-height:1.65;margin-bottom:0.8rem}
+.eb-price{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--gold)}
+.eb-new{position:absolute;top:0.85rem;right:0.85rem;background:var(--terra);color:white;font-size:0.6rem;font-weight:600;padding:2px 7px;border-radius:4px}
+
+/* ── TESTIMONIALS ── */
+.test-sec{padding:6rem 2rem;background:var(--cream)}
+.test-inner{max-width:1160px;margin:0 auto}
+.test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.1rem;margin-top:2.5rem}
+.tcard{background:white;border-radius:14px;padding:1.4rem;border:1px solid var(--line);transition:all 0.2s;position:relative}
+.tcard:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,20,16,0.07)}
+.tcard-stars{color:var(--gold);font-size:0.75rem;letter-spacing:1px;margin-bottom:0.7rem}
+.tcard-tag{display:inline-block;font-size:0.62rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;border-radius:4px;margin-bottom:0.65rem}
+.tt-ind{background:var(--terra-pale);color:var(--terra)}
+.tt-b2b{background:var(--sage-pale);color:var(--sage)}
+.tcard-q{font-family:'Cormorant Garamond',serif;font-size:0.9rem;color:var(--muted);line-height:1.8;font-style:italic;margin-bottom:1rem}
+.tcard-who{display:flex;align-items:center;gap:9px}
 .tav{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:white;font-weight:600;flex-shrink:0}
-.av1{background:var(--terra)}.av2{background:var(--sage)}.av3{background:var(--gold)}.av4{background:#9B59B6}
-.twho{font-size:0.76rem;color:var(--muted)}
-.twho strong{display:block;color:var(--brown);font-weight:500;font-size:0.8rem}
- 
-.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;margin-top:2.5rem}
-.ci h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--brown);margin-bottom:0.8rem}
-.ci p{color:var(--muted);font-size:0.88rem;line-height:1.85;font-weight:300;margin-bottom:1.25rem}
-.csteps{list-style:none;display:flex;flex-direction:column;gap:0.85rem}
-.csteps li{display:flex;gap:10px;align-items:flex-start}
-.csnum{width:25px;height:25px;border-radius:50%;background:var(--terra);color:white;font-size:0.7rem;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-.cstxt{font-size:0.85rem;color:var(--muted);line-height:1.6}
-.cstxt strong{display:block;color:var(--brown);font-weight:500;margin-bottom:1px}
-.cf{background:white;border-radius:20px;padding:1.65rem;box-shadow:0 6px 28px rgba(61,43,31,0.07);border:1px solid rgba(196,97,42,0.1)}
+.av1{background:var(--terra)}.av2{background:var(--sage)}.av3{background:var(--gold)}.av4{background:#8B59B2}
+.twho-name{font-size:0.8rem;font-weight:500;color:var(--ink)}
+.twho-role{font-size:0.72rem;color:var(--muted)}
+
+/* ── CONTACT ── */
+.contact-sec{padding:6rem 2rem;background:white}
+.contact-inner{max-width:1160px;margin:0 auto}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:2.5rem}
+.ci h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--ink);margin-bottom:0.8rem;font-weight:500}
+.ci-body{font-size:0.88rem;color:var(--muted);line-height:1.9;font-weight:300;margin-bottom:1.75rem}
+.steps{list-style:none;display:flex;flex-direction:column;gap:1rem}
+.step{display:flex;gap:12px;align-items:flex-start}
+.step-n{width:26px;height:26px;border-radius:8px;background:var(--terra);color:white;font-size:0.7rem;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.step-txt strong{display:block;font-size:0.85rem;color:var(--ink);font-weight:500;margin-bottom:2px}
+.step-txt span{font-size:0.8rem;color:var(--muted);line-height:1.6}
+.contact-note{margin-top:1.75rem;padding:1rem 1.1rem;background:var(--sage-pale);border-radius:10px;border:1px solid rgba(92,122,96,0.2)}
+.contact-note p{font-size:0.8rem;color:var(--sage);font-weight:500;margin-bottom:2px}
+.contact-note span{font-size:0.75rem;color:var(--muted)}
+
+.cform{background:var(--cream);border-radius:16px;padding:1.75rem;border:1px solid var(--line)}
 .fg{margin-bottom:1rem}
-.fg label{display:block;font-size:0.76rem;font-weight:500;color:var(--muted);margin-bottom:4px}
-.fg input,.fg select,.fg textarea{width:100%;padding:0.62rem 0.88rem;border:1.5px solid rgba(196,97,42,0.18);border-radius:9px;font-family:'DM Sans',sans-serif;font-size:0.85rem;color:var(--brown);background:var(--cream);outline:none;transition:border-color 0.18s}
+.fg label{display:block;font-size:0.74rem;font-weight:500;color:var(--muted);margin-bottom:4px;letter-spacing:0.3px}
+.fg input,.fg select,.fg textarea{width:100%;padding:0.65rem 0.9rem;border:1.5px solid rgba(184,92,42,0.18);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.85rem;color:var(--ink);background:white;outline:none;transition:border-color 0.18s}
 .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--terra)}
 .fg textarea{resize:vertical;min-height:80px}
-.frow{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem}
-.fsub{width:100%;background:var(--terra);color:white;border:none;padding:0.78rem;border-radius:999px;font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:500;cursor:pointer;transition:all 0.2s;margin-top:0.25rem}
-.fsub:hover{background:var(--brown);transform:translateY(-1px)}
- 
-footer{background:var(--brown);padding:2.5rem 2rem 1.5rem}
-.fi{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.fl{font-family:'Playfair Display',serif;font-size:1.35rem;color:white}
-.fl-s{font-size:0.58rem;color:rgba(255,255,255,0.35);letter-spacing:1.5px;text-transform:uppercase;display:block}
-.flinks{display:flex;gap:1.3rem;list-style:none;flex-wrap:wrap}
-.flinks a{color:rgba(255,255,255,0.45);text-decoration:none;font-size:0.78rem;transition:color 0.2s}
-.flinks a:hover{color:white}
-.fcopy{max-width:1100px;margin:1.4rem auto 0;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,0.08);text-align:center;font-size:0.72rem;color:rgba(255,255,255,0.28)}
- 
-.fade-up{opacity:0;transform:translateY(16px);transition:opacity 0.6s ease,transform 0.6s ease}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:0.85rem}
+.fsub{width:100%;background:var(--terra);color:white;border:none;padding:0.82rem;border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.88rem;font-weight:500;cursor:pointer;transition:all 0.2s;margin-top:0.25rem;letter-spacing:0.3px}
+.fsub:hover{background:var(--warm);transform:translateY(-1px);box-shadow:0 4px 14px rgba(184,92,42,0.25)}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:3rem 2rem 1.75rem}
+.foot-inner{max-width:1160px;margin:0 auto}
+.foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem}
+.foot-brand .fl{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:white;font-weight:500;margin-bottom:0.3rem}
+.foot-brand .fl-s{font-size:0.64rem;color:rgba(255,255,255,0.3);letter-spacing:1.5px;text-transform:uppercase}
+.foot-brand p{font-size:0.78rem;color:rgba(255,255,255,0.35);line-height:1.8;margin-top:0.75rem;font-weight:300}
+.foot-col h5{font-size:0.68rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:0.85rem}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:0.45rem}
+.foot-col ul a{color:rgba(255,255,255,0.45);text-decoration:none;font-size:0.8rem;transition:color 0.2s}
+.foot-col ul a:hover{color:white}
+.foot-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem}
+.fcopy{font-size:0.7rem;color:rgba(255,255,255,0.22)}
+.foot-legal{display:flex;gap:1.25rem}
+.foot-legal a{font-size:0.7rem;color:rgba(255,255,255,0.3);text-decoration:none;transition:color 0.2s}
+.foot-legal a:hover{color:rgba(255,255,255,0.65)}
+
+/* ── SHARED ── */
+.sec-label{font-size:0.68rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--terra);margin-bottom:0.6rem}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.75rem,2.6vw,2.4rem);color:var(--ink);margin-bottom:0.7rem;line-height:1.2;font-weight:500}
+.sec-sub{color:var(--muted);font-size:0.9rem;line-height:1.9;max-width:560px;font-weight:300}
+
+/* ── CONTACT TOGGLE ── */
+.contact-toggle{display:flex;gap:0;background:var(--smoke);border:1px solid var(--line);border-radius:10px;padding:4px;width:fit-content;margin:2rem 0 2.5rem}
+.ctbtn{background:none;border:none;font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:500;color:var(--muted);padding:0.6rem 1.5rem;border-radius:7px;cursor:pointer;transition:all 0.2s}
+.ctbtn.active{background:var(--terra);color:white;box-shadow:0 2px 8px rgba(184,92,42,0.25)}
+.ctbtn.sage-active{background:var(--sage)!important;box-shadow:0 2px 8px rgba(92,122,96,0.25)!important}
+.bcd-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;margin-bottom:2.5rem}
+.bcd-card{background:white;border:1px solid var(--line);border-radius:12px;padding:1.25rem;transition:all 0.2s}
+.bcd-card:hover{border-color:rgba(92,122,96,0.35);transform:translateY(-2px);box-shadow:0 6px 18px rgba(26,20,16,0.07)}
+.bcd-ic{font-size:1.4rem;margin-bottom:0.6rem}
+.bcd-card h4{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--ink);margin-bottom:0.4rem;font-weight:500}
+.bcd-card p{font-size:0.79rem;color:var(--muted);line-height:1.7}
+.bcd-list{list-style:none;margin-top:0.5rem;display:flex;flex-direction:column;gap:0.35rem}
+.bcd-list li{font-size:0.79rem;color:var(--muted);display:flex;align-items:center;gap:6px}
+.bcd-list li::before{content:'✓';color:var(--sage);font-weight:700;font-size:0.72rem;flex-shrink:0}
+.sage-n{background:var(--sage)!important}
+.b2b-note{background:var(--sage-pale)!important;border-color:rgba(92,122,96,0.2)!important}
+.b2b-note p{color:var(--sage)!important}
+.fsub-sage{background:var(--sage)!important}
+.fsub-sage:hover{background:#4A6A4E!important;box-shadow:0 4px 14px rgba(92,122,96,0.28)!important}
+
+.fade-up{opacity:0;transform:translateY(18px);transition:opacity 0.65s ease,transform 0.65s ease}
 .fade-up.visible{opacity:1;transform:translateY(0)}
-@keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.hero-text{animation:fu 0.7s ease both}
-.hero-right{animation:fu 0.7s 0.2s ease both}
- 
-@media(max-width:768px){
-  .nav-links,.nav-cta{display:none}
-  .nav-mob{display:block}
-  .hero-inner{grid-template-columns:1fr}
+@keyframes fu{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.hero-text{animation:fu 0.8s ease both}
+.hero-right{animation:fu 0.8s 0.22s ease both}
+
+@media(max-width:900px){
+  .hero-inner,.b2b-header,.about-grid,.contact-grid{grid-template-columns:1fr}
   .hero-right{display:none}
-  .conf-grid,.about-grid,.contact-wrap{grid-template-columns:1fr}
-  .about-vis{max-width:260px;margin:0 auto 2rem}
+  .b2b-cards{grid-template-columns:1fr 1fr}
+  .foot-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-links,.nav-actions{display:none}
+  .nav-mob{display:block}
+  .value-grid,.about-grid{grid-template-columns:1fr}
+  .about-visual{max-width:240px;margin:0 auto 2rem}
+  .b2b-cards{grid-template-columns:1fr}
   .frow{grid-template-columns:1fr}
-  .fi{flex-direction:column;text-align:center}
-  .flinks{justify-content:center}
+  .foot-top{grid-template-columns:1fr}
+  .foot-bottom{flex-direction:column;text-align:center}
 }
 </style>
 </head>
 <body>
- 
+
+<!-- NAV -->
 <nav>
-  <div class="logo-wrap">
-    <div class="logo">Jeju! <span style="font-style:italic;font-size:0.95rem;color:var(--muted)">jakie to proste</span></div>
-    <span class="logo-tag">nauka angielskiego online</span>
+  <div class="nav-inner">
+    <div class="logo-mark">
+      <span class="logo-main">Jeju!</span>
+      <span class="logo-sub">jakie to proste</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#zajecia" onclick="switchAudience('ind',document.querySelectorAll('.atbtn')[0])">Dla osób indywidualnych</a></li>
+      <li><a href="#zajecia" onclick="showB2B()">Dla firm</a></li>
+      <li><a href="#zajecia">Oferta</a></li>
+      <li><a href="#opinie">Opinie</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="#kontakt" class="nav-cta">Bezpłatna lekcja próbna</a>
+    </div>
+    <button class="nav-mob" onclick="toggleMenu()" aria-label="Menu">☰</button>
   </div>
-  <ul class="nav-links">
-    <li><a href="#o-mnie">O mnie</a></li>
-    <li><a href="#zajecia">Zajęcia</a></li>
-    <li><a href="#portfolio">Portfolio</a></li>
-    <li><a href="#ebooki">Ebooki</a></li>
-    <li><a href="#kontakt">Kontakt</a></li>
-  </ul>
-  <a href="#kontakt" class="nav-cta">Zacznij za darmo</a>
-  <button class="nav-mob" onclick="toggleMenu()" aria-label="Menu">☰</button>
 </nav>
- 
+
+<!-- HERO -->
 <div class="hero">
-  <div class="hero-bg">Jeju!</div>
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
   <div class="hero-inner">
     <div class="hero-text">
-      <div class="hero-flag">
-        <div class="flag"><div class="fw"></div><div class="fr"></div></div>
-        <span class="flag-txt">Dla Polaków — online, na Google Meet</span>
+      <div class="badge-row">
+        <div class="badge">
+          <div class="flag"><div class="fw"></div><div class="fr"></div></div>
+          <span>Dla Polaków — online, na Google Meet</span>
+        </div>
+        <div class="badge">
+          <div class="badge-dot"></div>
+          <span>Otwarte zapisy</span>
+        </div>
       </div>
-      <div class="hero-logo">Jeju!<span>jakie to proste</span></div>
-      <p class="hero-tagline">Przestań się bać angielskiego.<br><strong>Zacznij go czuć.</strong></p>
-      <p class="hero-sub">Wiem, jak to jest — czerwienisz się przy obcokrajowcach, blokujesz się w połowie zdania, albo po prostu unikasz angielskiego jak ognia. <em>To się zmienia tutaj.</em> Pracujemy razem nie tylko nad językiem, ale nad pewnością siebie, stresem i tym głosem w głowie, który mówi "nie dam rady".</p>
+      <div class="hero-eyebrow">Nauka angielskiego online</div>
+      <h1 class="hero-h">Angielski, który <em>naprawdę działa</em> — dla Ciebie i Twojego zespołu.</h1>
+      <p class="hero-tagline">Lekcje indywidualne, grupowe i szkolenia firmowe.<br>Bez stresu, bez oceniania, z prawdziwym efektem.</p>
+      <p class="hero-body">Wiem, jak to jest — blokujesz się w połowie zdania, unikasz angielskiego jak ognia. <strong>To się zmienia tutaj.</strong> Pracujemy nie tylko nad językiem, ale nad pewnością siebie i tym głosem w głowie, który mówi "nie dam rady". Dla osób prywatnych i dla firm.</p>
       <div class="hero-btns">
-        <a href="#kontakt" class="btn-p">Chcę bezpłatną lekcję próbną</a>
-        <a href="#pewnosc" class="btn-s">Jak to działa?</a>
+        <a href="#kontakt" class="btn-primary">Chcę bezpłatną lekcję próbną →</a>
+        <a href="#firmy" class="btn-secondary">Oferta dla firm</a>
       </div>
-      <div class="hero-proof">
-        <div><div class="proof-n">300+</div><div class="proof-t">zadowolonych kursantów</div></div>
-        <div><div class="proof-n">5 lat</div><div class="proof-t">doświadczenia</div></div>
-        <div><div class="proof-n">100%</div><div class="proof-t">online </div></div>
+      <div class="trust-strip">
+        <div class="trust-item"><div class="trust-num">300+</div><div class="trust-label">Zadowolonych kursantów</div></div>
+        <div class="trust-item"><div class="trust-num">5 lat</div><div class="trust-label">Doświadczenia</div></div>
+        <div class="trust-item"><div class="trust-num">100%</div><div class="trust-label">Online</div></div>
+        <div class="trust-item"><div class="trust-num">24h</div><div class="trust-label">Czas odpowiedzi</div></div>
       </div>
     </div>
     <div class="hero-right">
-      <div class="hcard"><div class="hcard-ic ic1">👩‍👧</div><div class="hcard-txt"><strong>Au pair & praca sezonowa</strong><span>Rozmowy, codzienne sytuacje</span></div></div>
-      <div class="hcard"><div class="hcard-ic ic2">✈️</div><div class="hcard-txt"><strong>Wakacje & podróże</strong><span>Od lotniska po przygodę poza hotelem</span></div></div>
-      <div class="hcard"><div class="hcard-ic ic3">💼</div><div class="hcard-txt"><strong>Korpo English</strong><span> Przygotowanie do spotkania czy prezentacji </span></div></div>
-      <div class="hcard"><div class="hcard-ic ic4">🚛</div><div class="hcard-txt"><strong>Kierowcy ciężarówek</strong><span>Niemcy, Holandia, UK </span></div></div>
-      <div class="hcard"><div class="hcard-ic ic5">👵</div><div class="hcard-txt"><strong>Opiekunowie osób starszych</strong><span>Codzienna komunikacja z podopiecznymi</span></div></div>
-   </div>
-  </div>
-</div>
- 
-<div class="conf-sec" id="pewnosc">
-  <div class="conf-inner">
-    <div class="conf-grid">
-      <div>
-        <div class="sec-label" style="color:var(--terra-light)">Coś więcej niż język</div>
-        <h2 class="sec-title" style="color:white;font-size:clamp(1.7rem,2.8vw,2.3rem)">Angielski bez strachu.<br>Pewność siebie w prezencie.</h2>
-        <blockquote class="conf-quote">"Nie chodzi tylko o gramatykę. Chodzi o to, że masz prawo mówić — i że Twój głos ma wartość w każdym języku."</blockquote>
-        <p class="conf-p">Większość kursów uczy słów i reguł. Ja uczę <em>odwagi do mówienia</em>. Pracujemy z lękiem przed oceną, ze wstydem przy błędach i z tym paraliżem, który czujesz zanim otworzysz usta. Moje lekcje to bezpieczna przestrzeń — bez oceniania, bez pośpiechu, z dużą dawką ciepła i humoru.</p>
-      </div>
-      <div class="conf-cards">
-        <div class="conf-card"><div class="conf-card-ic">🫶</div><div class="conf-card-txt"><strong>Bezpieczna przestrzeń</strong><p>Błędy są częścią nauki — nigdy nie oceniam, zawsze wspieram.</p></div></div>
-        <div class="conf-card"><div class="conf-card-ic">🧠</div><div class="conf-card-txt"><strong>Odczarowanie stresu</strong><p>Pracujemy z lękiem językowym — bo on jest prawdziwy i ma nazwę.</p></div></div>
-        <div class="conf-card"><div class="conf-card-ic">💬</div><div class="conf-card-txt"><strong>Pewność siebie w mówieniu</strong><p>Zamiast idealnych zdań — naturalna, prawdziwa komunikacja.</p></div></div>
-        <div class="conf-card"><div class="conf-card-ic">🌱</div><div class="conf-card-txt"><strong>Twoje tempo, Twój plan</strong><p>Każda lekcja dopasowana do Ciebie — nie do podręcznika.</p></div></div>
-      </div>
+      <div class="aud-card"><div class="aud-ic">👤</div><div class="aud-title">Lekcje indywidualne</div><div class="aud-desc">Pełna uwaga, Twój plan, Twoje tempo</div></div>
+      <div class="aud-card b2b-card"><div class="b2b-tag">Dla firm</div><div class="aud-ic">🏢</div><div class="aud-title">Szkolenia firmowe</div><div class="aud-desc">Maile, spotkania, prezentacje — wycena indywidualna</div></div>
+      <div class="aud-card"><div class="aud-ic">👩‍👧</div><div class="aud-title">Au pair & praca sezonowa</div><div class="aud-desc">Rozmowy i codzienne sytuacje</div></div>
+      <div class="aud-card b2b-card"><div class="b2b-tag">Dla firm</div><div class="aud-ic">👥</div><div class="aud-title">Grupy pracownicze</div><div class="aud-desc">Angielski dla całego działu lub zespołu</div></div>
+      <div class="aud-card"><div class="aud-ic">🚛</div><div class="aud-title">Kierowcy ciężarówek</div><div class="aud-desc">Niemcy, Holandia, UK</div></div>
+      <div class="aud-card"><div class="aud-ic">👵</div><div class="aud-title">Opiekunowie osób starszych</div><div class="aud-desc">Komunikacja z podopiecznymi i rodziną</div></div>
     </div>
   </div>
 </div>
- 
-<section id="o-mnie">
-  <div class="sec-label fade-up">O mnie</div>
-  <div class="about-grid">
-    <div class="about-vis fade-up">
-      <div class="about-box"></div>
-      <div class="astat a1"><div class="sn">300+</div><div class="st">kursantów</div></div>
-      <div class="astat a2"><div class="sn">5 lat</div><div class="st">doświadczenia</div></div>
-    </div>
-    <div class="fade-up">
-      <h2 class="sec-title">Cześć👋</h2>
-      <p class="sec-sub">Jestem nauczycielką angielskiego z pasją do pomagania Polakom — szczególnie tym, którzy kiedyś stracili wiarę, że angielski "to nie jest dla nich". Moje lekcje są praktyczne, ciepłe i skupione na tym, czego naprawdę potrzebujesz w pracy, życiu za granicą lub w podrózy.</p>
-      <ul class="about-pts">
-        <li>Przeprowadziłam wiele szkoleń oraz lekcji indiwidualnych. Od klasycznych korków, przygotowania do profesionalnych prezentacji, czy pomocy w nawiazaniu nowych znajomosci gdzie jezyk był przeszkodą. </li>
-        <li>Lekcje indywidualne i grupowe </li>
-        <li>Angielski dopasowany do Twojej branży i danych sytuacji</li>
-        <li>Notatki, materiały i ćwiczenia po każdej lekcji</li>
-        <li>Elastyczne godziny — rano, wieczorem, w weekendy</li>
-      </ul>
-      <a href="#kontakt" class="btn-p" style="margin-top:1.5rem;display:inline-block">Napisz do mnie →</a>
-    </div>
-  </div>
-</section>
- 
-<section id="zajecia">
-  <div class="sec-label fade-up">Oferta</div>
-  <h2 class="sec-title fade-up">Zajęcia dla każdego</h2>
-  <p class="sec-sub fade-up">Indywidualne, grupowe, warsztaty i szkolenia firmowe. Ceny ustalamy razem — napisz do mnie i znajdziemy coś dla Ciebie.</p>
-  <div class="cg">
-    <div class="cc fade-up"><div class="cc-ic">👤</div><div class="cc-title">Lekcje indywidualne</div><p class="cc-desc">Pełna uwaga tylko dla Ciebie. Program dopasowany do Twoich celów, tempa i branży — od zera do pewności siebie.</p><div class="cc-price">Cena <small>do ustalenia</small></div><p class="cc-note">✉️ Napisz, żeby umówić bezpłatną próbną</p></div>
-    <div class="cc hot fade-up"><span class="hot-badge">Popularne</span><div class="cc-ic">👥</div><div class="cc-title">Zajęcia grupowe</div><p class="cc-desc">Małe grupy tematyczne — dla kierowców, opiekunów, au pair. Uczycie się razem, motywujecie nawzajem i płacicie mniej.</p><div class="cc-price">Cena <small>do ustalenia</small></div><p class="cc-note">✉️ Możliwe grupy ze znajomych lub z firmy</p></div>
-    <div class="cc fade-up"><div class="cc-ic">🎯</div><div class="cc-title">Warsztaty tematyczne</div><p class="cc-desc">Jednorazowe lub cykliczne warsztaty: angielski dla opiekunów, au pair, pracowników sezonowych, angielski na wakacje.</p><div class="cc-price">Cena <small>do ustalenia</small></div><p class="cc-note">✉️ Zapytaj o najbliższy termin</p></div>
-    <div class="cc fade-up"><div class="cc-ic">🏢</div><div class="cc-title">Szkolenia firmowe</div><p class="cc-desc">Angielski dla całego zespołu — maile, rozmowy z klientami, prezentacje. Indywidualna wycena dla firm.</p><div class="cc-price">Wycena <small>indywidualna</small></div><p class="cc-note">✉️ Skontaktuj się po ofertę</p></div>
-  </div>
-</section>
- 
-<section id="portfolio">
-  <div class="sec-label fade-up">Moje materiały</div>
-  <h2 class="sec-title fade-up">Portfolio</h2>
-  <p class="sec-sub fade-up">Materiały, narzędzia i warsztaty, które tworzę dla moich kursantów — praktyczne, dopasowane do indiwudalnych potrzeb.</p>
-  <div style="margin-top:2.25rem" class="fade-up">
-    <div class="port-tabs">
-      <button class="ptab active" onclick="fp(this,'all')">Wszystkie</button>
-      <button class="ptab" onclick="fp(this,'speaking')">Speaking</button>
-      <button class="ptab" onclick="fp(this,'grammar')">Gramatyka</button>
-      <button class="ptab" onclick="fp(this,'corporate')">Korpo</button>
-      <button class="ptab" onclick="fp(this,'warsztaty')">Warsztaty</button>
-    </div>
-    <div class="pg" id="pgrid">
-      <div class="pi" data-c="speaking"><div class="pt t2">🗣️</div><div class="pi-info"><h4>Speaking — rozmowy w pracy</h4><p>Ćwiczenia konwersacyjne dla dorosłych</p></div></div>
-      <div class="pi" data-c="speaking"><div class="pt t1">🎙️</div><div class="pi-info"><h4>Wymowa i pewność siebie</h4><p>Mów zrozumiale, bez kompleksów</p></div></div>
-      <div class="pi" data-c="grammar"><div class="pt t3">📝</div><div class="pi-info"><h4>Gramatyka A1–B2</h4><p>Ćwiczenia dopasowane do poziomu</p></div></div>
-      <div class="pi" data-c="grammar"><div class="pt t4">📖</div><div class="pi-info"><h4>Czasy angielskie po ludzku</h4><p>Bez żargonu, z przykładami z życia</p></div></div>
-      <div class="pi" data-c="corporate"><div class="pt t3">📊</div><div class="pi-info"><h4>Prezentacje po angielsku</h4><p>Mów pewnie na spotkaniach i online</p></div></div>
-      <div class="pi" data-c="warsztaty"><div class="pt t1">🚛</div><div class="pi-info"><h4>Angielski dla kierowców</h4><p>Granice, stacje, dokumenty, klienci</p></div></div>
-      <div class="pi" data-c="warsztaty"><div class="pt t2">👵</div><div class="pi-info"><h4>Angielski dla opiekunów</h4><p>Komunikacja z podopiecznymi i rodziną</p></div></div>
-      <div class="pi" data-c="warsztaty"><div class="pt t4">👩‍👧</div><div class="pi-info"><h4>Angielski dla au pair</h4><p>Rodzina, dzieci, dom — słownictwo i dialogi</p></div></div>
-    </div>
-  </div>
-</section>
- 
-<div class="eb-bg" id="ebooki">
-  <div class="eb-inner">
-    <div class="sec-label">Ebooki</div>
-    <h2 class="sec-title">Ucz się kiedy chcesz</h2>
-    <p class="sec-sub">Praktyczne ebooki dla Polaków — do konkretnych celów, w konkretnych sytuacjach. Pobierasz raz, używasz całe życie.</p>
-    <div class="eb-grid">
-      <div class="eb"><div class="eb-cover ec1">🤔</div><div class="eb-tag">Dla każdego</div><div class="eb-title">Dlaczego angielski jest taki trudny?</div><p class="eb-desc">Poznaj przyczyny frustracji i dowiedz się, jak przestać walczyć z językiem.</p><div class="eb-price">29 zł</div></div>
-      <div class="eb"><div class="eb-cover ec2">💼</div><span class="eb-new">Nowy</span><div class="eb-tag">Praca w biurze</div><div class="eb-title">Korpo English — angielski w pracy</div><p class="eb-desc">Maile, spotkania, small talk i prezentacje. Pewnie i profesjonalnie.</p><div class="eb-price">39 zł</div></div>
-      <div class="eb"><div class="eb-cover ec3">✈️</div><div class="eb-tag">Wakacje — podstawy</div><div class="eb-title">Wakacyjne minimum — dasz radę!</div><p class="eb-desc">Lotnisko, hotel, restauracja, zakupy. Zwroty, które wystarczą na urlop.</p><div class="eb-price">19 zł</div></div>
-      <div class="eb"><div class="eb-cover ec4">🌍</div><div class="eb-tag">Wakacje — rozszerzony</div><div class="eb-title">Poza hotelem — odkryj świat po angielsku</div><p class="eb-desc">Transport, zwiedzanie, miejscowi, nagłe sytuacje. Wyjdź poza strefę komfortu.</p><div class="eb-price">29 zł</div></div>
-      <div class="eb"><div class="eb-cover ec5">🚛</div><div class="eb-tag">Praca za granicą</div><div class="eb-title">Angielski dla Polaków za granicą</div><p class="eb-desc">Dla kierowców, opiekunów, au pair i pracowników sezonowych. Niemcy, Holandia, UK i więcej.</p><div class="eb-price">35 zł</div></div>
-    </div>
-    <p style="margin-top:1.25rem;font-size:0.76rem;color:rgba(255,255,255,0.35)">* Ebooki dostępne jako PDF. Napisz do mnie, żeby zamówić.</p>
-  </div>
-</div>
- 
-<section id="opinie">
-  <div class="sec-label fade-up">Opinie</div>
-  <h2 class="sec-title fade-up">Co mówią moi kursanci</h2>
-  <div class="tg">
-    <div class="tc fade-up"><div class="tc-stars">★★★★★</div><p class="tc-q">"Bałam się angielskiego od liceum. Kasia sprawiła, że przestałam się wstydzić błędów... I nabrałam jezyka w buzi! Teraz rozmawiam, może jeszcze nie perfekcyjnie ale nie boje sie mówić!"</p><div class="tc-who"><div class="tav av1">KW</div><div class="twho"><strong>Kasia W.</strong>Opiekunka osób starszych, Niemcy</div></div></div>
-    <div class="tc fade-up"><div class="tc-stars">★★★★★</div><p class="tc-q">"Jako kierowca stwierdzilem ze minimum angielskiego mi wystarczy ale się... bardzo pomyliłem. Polecam lekcje 1:1, bo można pogadać o wszystkim i niczym po angielsku. "</p><div class="tc-who"><div class="tav av2">MW</div><div class="twho"><strong>Marek W.</strong>Kierowca ciężarówki, trasy EU</div></div></div>
-    <div class="tc fade-up"><div class="tc-stars">★★★★★</div><p class="tc-q">"Lekcje z Kasią to coś więcej niż angielski — to terapia ze stresem językowym (nie to nie przesada :))  Pomogłaś mi bardzo przed wyjazdem. Dziękuję ci prostu z serduszka <3"</p><div class="tc-who"><div class="tav av3">AN</div><div class="twho"><strong>Ania N.</strong>Au pair, Irlandia</div></div></div>
-    <div class="tc fade-up"><div class="tc-stars">★★★★★</div><p class="tc-q">"Moja pierwsza praca w korpo mnie prawie zmiadżyła, co rusz nowe słówka na każdym callu.. Dzieki za cierplowść!"</p><div class="tc-who"><div class="tav av4">PR</div><div class="twho"><strong>Piotr R.</strong>Manager, firma międzynarodowa</div></div></div>
-  </div>
-</section>
- 
-<section id="kontakt">
-  <div class="sec-label fade-up">Zaczynamy?</div>
-  <h2 class="sec-title fade-up">Pierwsza lekcja jest bezpłatna</h2>
-  <p class="sec-sub fade-up">Bez zobowiązań, bez oceniania. Po prostu pogadamy — o Twoich celach, lękach i o tym, jak mogę Ci pomóc.</p>
-  <div class="contact-wrap">
-    <div class="ci fade-up">
-      <h3>Jak to wygląda?</h3>
-      <p>Napisz do mnie, a odezwę się w ciągu 24 godzin. Razem ustalimy termin bezpłatnej lekcji próbnej (30 min)</p>
-      <ul class="csteps">
-        <li><div class="csnum">1</div><div class="cstxt"><strong>Wypełnij formularz</strong>Powiedz mi o sobie i swoich celach</div></li>
-        <li><div class="csnum">2</div><div class="cstxt"><strong>Odezwę się w 24h</strong>Razem ustalimy termin i szczegóły</div></li>
-        <li><div class="csnum">3</div><div class="cstxt"><strong>Bezpłatna lekcja próbna</strong>30 minut na w pełni online lub telefonicznie — zero stresu</div></li>
-        <li><div class="csnum">4</div><div class="cstxt"><strong>Zaczynamy razem!</strong>Wybieramy plan i ruszamy z nauką</div></li>
-      </ul>
-    </div>
-    <div class="cf fade-up">
-      <form action="https://formspree.io/f/mredgdgq" method="POST" id="yeyu-form">
-        <div class="frow">
-          <div class="fg"><label>Imię</label><input type="text" name="imie" placeholder="Anna" required></div>
-          <div class="fg"><label>Email</label><input type="email" name="email" placeholder="anna@email.com" required></div>
-        </div>
-        <div class="fg"><label>Skąd piszesz / gdzie pracujesz?</label><input type="text" name="lokalizacja" placeholder="np. Polska, Niemcy, Holandia..."></div>
-        <div class="fg"><label>Co Cię interesuje?</label>
-          <select name="zainteresowanie">
-            <option>Lekcje indywidualne</option>
-            <option>Zajęcia grupowe</option>
-            <option>Warsztat tematyczny</option>
-            <option>Ebook</option>
-            <option>Szkolenie firmowe</option>
-            <option>Nie wiem jeszcze — chcę porozmawiać</option>
-          </select>
-        </div>
-        <div class="fg"><label>Twój poziom angielskiego</label>
-          <select name="poziom">
-            <option>Zupełny początkujący</option>
-            <option>Podstawowy (A2)</option>
-            <option>Średniozaawansowany (B1)</option>
-            <option>Wyższy średni (B2)</option>
-            <option>Zaawansowany (C1+)</option>
-            <option>Nie wiem / trudno ocenić</option>
-          </select>
-        </div>
-        <div class="fg"><label>Co chcesz osiągnąć? (opcjonalnie)</label><textarea name="wiadomosc" placeholder="np. Potrzebuję angielskiego do pracy w Niemczech, albo chcę przestać bać się mówienia..."></textarea></div>
-        <button type="submit" class="fsub" id="fsub">Wyślij — zacznij swoją przygodę! </button>
-      </form>
-      <div id="sukces" style="display:none;text-align:center;padding:2rem 1rem">
-        <div style="font-size:2.5rem;margin-bottom:0.75rem">🌟</div>
-        <p style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--brown);margin-bottom:0.5rem">Wysłano! Dziękuję!</p>
-        <p style="font-size:0.88rem;color:var(--muted)">Odezwę się wkrótce! </p>
+
+
+<!-- VALUE / APPROACH -->
+<div class="value-sec" id="pewnosc">
+  <div class="value-inner">
+    <div class="sec-label fade-up">Metoda</div>
+    <div class="value-grid">
+      <div class="fade-up">
+        <h3>Więcej niż gramatyka.<br><em>Odwaga do mówienia.</em></h3>
+        <p>Większość kursów uczy słów i reguł. Ja uczę odwagi do mówienia. Pracujemy z lękiem przed oceną, ze wstydem przy błędach i z tym paraliżem, który czujesz zanim otworzysz usta.</p>
+        <blockquote>"Nie chodzi tylko o gramatykę. Chodzi o to, że masz prawo mówić — i że Twój głos ma wartość w każdym języku."</blockquote>
+        <p>Moje lekcje to bezpieczna przestrzeń — bez oceniania, bez pośpiechu, z dużą dawką ciepła i humoru. Dotyczy to zarówno lekcji prywatnych, jak i szkoleń w firmach.</p>
+      </div>
+      <div class="pillars fade-up">
+        <div class="pillar"><div class="pillar-ic">🫶</div><h5>Bezpieczna przestrzeń</h5><p>Błędy są częścią nauki — nigdy nie oceniam, zawsze wspieram.</p></div>
+        <div class="pillar"><div class="pillar-ic">🧠</div><h5>Stres językowy</h5><p>Pracujemy z lękiem językowym — bo on jest prawdziwy i ma nazwę.</p></div>
+        <div class="pillar"><div class="pillar-ic">💬</div><h5>Naturalna komunikacja</h5><p>Zamiast idealnych zdań — prawdziwe, swobodne mówienie.</p></div>
+        <div class="pillar"><div class="pillar-ic">🌱</div><h5>Twoje tempo</h5><p>Każda lekcja dopasowana do Ciebie — nie do podręcznika.</p></div>
+        <div class="pillar"><div class="pillar-ic">📋</div><h5>Materiały po lekcji</h5><p>Notatki i ćwiczenia po każdym spotkaniu — zawsze na czas.</p></div>
+        <div class="pillar"><div class="pillar-ic">📈</div><h5>Mierzalne postępy</h5><p>Miesięczne podsumowanie postępów dla firm i kursantów.</p></div>
       </div>
     </div>
   </div>
-</section>
- 
+</div>
+
+<!-- OFFERS -->
+<div class="offers-sec" id="zajecia">
+  <div class="offers-inner">
+    <div class="sec-label fade-up">Oferta</div>
+    <h2 class="sec-title fade-up">Zajęcia dla każdego</h2>
+    <p class="sec-sub fade-up">Indywidualne, grupowe, warsztaty i szkolenia firmowe. Ceny ustalamy razem — napisz i znajdziemy coś dla Ciebie.</p>
+    <div class="audience-toggle fade-up">
+      <button class="atbtn active" onclick="switchAudience('ind',this)">👤 Osoby prywatne</button>
+      <button class="atbtn" onclick="switchAudience('b2b',this)">🏢 Firmy</button>
+    </div>
+
+    <div class="ind-panel offers-grid">
+      <div class="offer-card"><div class="offer-ic">👤</div><div class="offer-title">Lekcje indywidualne</div><p class="offer-desc">Pełna uwaga tylko dla Ciebie. Program dopasowany do Twoich celów, tempa i branży — od zera do pewności siebie.</p><ul class="offer-features"><li>60 min, online na Google Meet</li><li>Materiały i notatki po każdej lekcji</li><li>Elastyczny termin</li></ul><div class="offer-price">Cena <small>do ustalenia</small></div><p class="offer-note">✉️ Napisz — pierwsza próbna bezpłatna</p></div>
+      <div class="offer-card featured"><span class="offer-badge ob-hot">Popularne</span><div class="offer-ic">👥</div><div class="offer-title">Zajęcia grupowe</div><p class="offer-desc">Małe grupy tematyczne — dla kierowców, opiekunów, au pair. Uczycie się razem i płacicie mniej.</p><ul class="offer-features"><li>Grupy ze znajomych lub z ogłoszenia</li><li>Temat dopasowany do grupy</li><li>Motywacja i dynamika grupowa</li></ul><div class="offer-price">Cena <small>do ustalenia</small></div><p class="offer-note">✉️ Zapytaj o aktualną grupę</p></div>
+      <div class="offer-card"><div class="offer-ic">🎯</div><div class="offer-title">Warsztaty tematyczne</div><p class="offer-desc">Jednorazowe lub cykliczne: angielski dla opiekunów, au pair, kierowców, wakacyjne minimum.</p><ul class="offer-features"><li>Intensywny format 2–3h</li><li>Gotowe do użycia od razu</li><li>Materiały i słowniczek</li></ul><div class="offer-price">Cena <small>do ustalenia</small></div><p class="offer-note">✉️ Zapytaj o najbliższy termin</p></div>
+    </div>
+
+    <div class="b2b-panel offers-grid">
+      <div class="offer-card b2b-offer"><span class="offer-badge ob-b2b">Dla firm</span><div class="offer-ic">🏢</div><div class="offer-title">Szkolenie firmowe</div><p class="offer-desc">Angielski dla całego zespołu — maile, rozmowy z klientami, prezentacje. Program skrojony na miarę firmy.</p><ul class="offer-features"><li>Wycena indywidualna — małe i duże firmy</li><li>Grafik dopasowany do pracy zespołu</li><li>Miesięczny raport postępów</li><li>Faktura VAT</li></ul><div class="offer-price">Wycena <small>indywidualna</small></div><p class="offer-note">✉️ Skontaktuj się po bezpłatną ofertę</p></div>
+      <div class="offer-card b2b-offer featured"><span class="offer-badge ob-b2b">Popularne</span><div class="offer-ic">👥</div><div class="offer-title">Grupy działowe</div><p class="offer-desc">Angielski dla konkretnego działu — obsługa klienta, sprzedaż, dział techniczny. Scenariusze z codziennej pracy.</p><ul class="offer-features"><li>Grupy 3–8 osób</li><li>Branżowe słownictwo i case studies</li><li>Symulacje rozmów z klientami</li><li>Dokumentacja i materiały do firmy</li></ul><div class="offer-price">Wycena <small>od liczby osób</small></div><p class="offer-note">✉️ Napisz, żeby omówić szczegóły</p></div>
+      <div class="offer-card b2b-offer"><span class="offer-badge ob-b2b">Dla firm</span><div class="offer-ic">🎤</div><div class="offer-title">Intensyw prezentacyjny</div><p class="offer-desc">Jednodniowy lub weekendowy intensyw dla managerów i liderów — prezentacje, negocjacje, wystąpienia.</p><ul class="offer-features"><li>Nagranie i feedback z sesji</li><li>Indywidualny plan dla każdego uczestnika</li><li>Gotowe szablony i frazy do pracy</li></ul><div class="offer-price">Wycena <small>indywidualna</small></div><p class="offer-note">✉️ Skontaktuj się po program</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- PORTFOLIO -->
+<div class="port-sec" id="portfolio">
+  <div class="port-inner">
+    <div class="sec-label fade-up">Moje materiały</div>
+    <h2 class="sec-title fade-up">Portfolio</h2>
+    <p class="sec-sub fade-up">Materiały, narzędzia i warsztaty, które tworzę dla moich kursantów — praktyczne, dopasowane do indywidualnych potrzeb.</p>
+    <div style="margin-top:2rem" class="fade-up">
+      <div class="port-tabs">
+        <button class="ptab active" onclick="fp(this,'all')">Wszystkie</button>
+        <button class="ptab" onclick="fp(this,'speaking')">Speaking</button>
+        <button class="ptab" onclick="fp(this,'grammar')">Gramatyka</button>
+        <button class="ptab" onclick="fp(this,'corporate')">Korpo</button>
+        <button class="ptab" onclick="fp(this,'warsztaty')">Warsztaty</button>
+      </div>
+      <div class="port-grid" id="pgrid">
+        <div class="port-item" data-c="speaking"><div class="port-thumb pt2">🗣️</div><div class="port-info"><h4>Speaking — rozmowy w pracy</h4><p>Ćwiczenia konwersacyjne dla dorosłych</p></div></div>
+        <div class="port-item" data-c="speaking"><div class="port-thumb pt1">🎙️</div><div class="port-info"><h4>Wymowa i pewność siebie</h4><p>Mów zrozumiale, bez kompleksów</p></div></div>
+        <div class="port-item" data-c="grammar"><div class="port-thumb pt3">📝</div><div class="port-info"><h4>Gramatyka A1–B2</h4><p>Ćwiczenia dopasowane do poziomu</p></div></div>
+        <div class="port-item" data-c="grammar"><div class="port-thumb pt4">📖</div><div class="port-info"><h4>Czasy angielskie po ludzku</h4><p>Bez żargonu, z przykładami z życia</p></div></div>
+        <div class="port-item" data-c="corporate"><div class="port-thumb pt3">📊</div><div class="port-info"><h4>Prezentacje po angielsku</h4><p>Mów pewnie na spotkaniach i online</p></div></div>
+        <div class="port-item" data-c="corporate"><div class="port-thumb pt5">📧</div><div class="port-info"><h4>Business Emails</h4><p>Szablony i struktury mailowe</p></div></div>
+        <div class="port-item" data-c="warsztaty"><div class="port-thumb pt1">🚛</div><div class="port-info"><h4>Angielski dla kierowców</h4><p>Granice, stacje, dokumenty, klienci</p></div></div>
+        <div class="port-item" data-c="warsztaty"><div class="port-thumb pt2">👵</div><div class="port-info"><h4>Angielski dla opiekunów</h4><p>Komunikacja z podopiecznymi i rodziną</p></div></div>
+        <div class="port-item" data-c="warsztaty"><div class="port-thumb pt4">👩‍👧</div><div class="port-info"><h4>Angielski dla au pair</h4><p>Rodzina, dzieci, dom — słownictwo i dialogi</p></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="test-sec" id="opinie">
+  <div class="test-inner">
+    <div class="sec-label fade-up">Opinie</div>
+    <h2 class="sec-title fade-up">Co mówią moi kursanci</h2>
+    <p class="sec-sub fade-up">Osoby prywatne, pracownicy za granicą i firmy — razem po angielsku.</p>
+    <div class="test-grid">
+      <div class="tcard fade-up">
+        <div class="tcard-stars">★★★★★</div>
+        <span class="tcard-tag tt-ind">Osoba prywatna</span>
+        <p class="tcard-q">"Bałam się angielskiego od liceum. Kasia sprawiła, że przestałam się wstydzić błędów... I nabrałam języka w buzi! Teraz rozmawiam, może jeszcze nie perfekcyjnie ale nie boję się mówić!"</p>
+        <div class="tcard-who"><div class="tav av1">KW</div><div><div class="twho-name">Kasia W.</div><div class="twho-role">Opiekunka osób starszych, Niemcy</div></div></div>
+      </div>
+      <div class="tcard fade-up">
+        <div class="tcard-stars">★★★★★</div>
+        <span class="tcard-tag tt-ind">Praca za granicą</span>
+        <p class="tcard-q">"Jako kierowca stwierdziłem że minimum angielskiego mi wystarczy ale się... bardzo pomyliłem. Polecam lekcje 1:1, bo można pogadać o wszystkim i niczym po angielsku."</p>
+        <div class="tcard-who"><div class="tav av2">MW</div><div><div class="twho-name">Marek W.</div><div class="twho-role">Kierowca ciężarówki, trasy EU</div></div></div>
+      </div>
+      <div class="tcard fade-up">
+        <div class="tcard-stars">★★★★★</div>
+        <span class="tcard-tag tt-ind">Au pair</span>
+        <p class="tcard-q">"Lekcje z Kasią to coś więcej niż angielski — to terapia ze stresem językowym. Pomogłaś mi bardzo przed wyjazdem. Dziękuję Ci z całego serca ❤"</p>
+        <div class="tcard-who"><div class="tav av3">AN</div><div><div class="twho-name">Ania N.</div><div class="twho-role">Au pair, Irlandia</div></div></div>
+      </div>
+      <div class="tcard fade-up">
+        <div class="tcard-stars">★★★★★</div>
+        <span class="tcard-tag tt-b2b">Firma</span>
+        <p class="tcard-q">"Moja pierwsza praca w korpo mnie prawie zmiadżyła, co rusz nowe słówka na każdym callu. Dziękuję za cierpliwość i program dopasowany do moich potrzeb!"</p>
+        <div class="tcard-who"><div class="tav av4">PR</div><div><div class="twho-name">Piotr R.</div><div class="twho-role">Manager, firma międzynarodowa</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-sec" id="kontakt">
+  <div class="contact-inner">
+    <div class="sec-label fade-up">Zaczynamy?</div>
+    <h2 class="sec-title fade-up">Napisz do mnie</h2>
+    <p class="sec-sub fade-up">Wybierz, czy piszesz jako osoba prywatna czy w imieniu firmy — i wypełnij odpowiedni formularz.</p>
+
+    <!-- contact toggle -->
+    <div class="contact-toggle fade-up">
+      <button class="ctbtn active" id="ct-ind" onclick="switchContact('ind')">👤 Osoba prywatna</button>
+      <button class="ctbtn" id="ct-b2b" onclick="switchContact('b2b')">🏢 Firma</button>
+    </div>
+
+    <!-- INDIVIDUAL PANEL -->
+    <div class="contact-panel" id="cp-ind">
+      <div class="contact-grid">
+        <div class="ci fade-up">
+          <h3>Jak to wygląda?</h3>
+          <p class="ci-body">Napisz do mnie, a odezwę się w ciągu 24 godzin. Razem ustalimy termin bezpłatnej lekcji próbnej (30 min) — zero zobowiązań, zero stresu.</p>
+          <ul class="steps">
+            <li><div class="step-n">1</div><div class="step-txt"><strong>Wypełnij formularz</strong><span>Powiedz mi o sobie i swoich celach</span></div></li>
+            <li><div class="step-n">2</div><div class="step-txt"><strong>Odezwę się w 24h</strong><span>Razem ustalimy termin i szczegóły</span></div></li>
+            <li><div class="step-n">3</div><div class="step-txt"><strong>Bezpłatna lekcja próbna</strong><span>30 minut online — pełna swoboda, bez oceniania</span></div></li>
+            <li><div class="step-n">4</div><div class="step-txt"><strong>Zaczynamy!</strong><span>Wybieramy plan i ruszamy z nauką</span></div></li>
+          </ul>
+          <div class="contact-note">
+            <p>💡 Pierwsza lekcja bezpłatna</p>
+            <span>Bez zobowiązań — sprawdź czy to styl nauki dla Ciebie.</span>
+          </div>
+        </div>
+        <div class="cform fade-up">
+          <form action="https://formspree.io/f/mredgdgq" method="POST" id="form-ind">
+            <input type="hidden" name="typ" value="Osoba prywatna">
+            <div class="frow">
+              <div class="fg"><label>Imię</label><input type="text" name="imie" placeholder="Anna" required></div>
+              <div class="fg"><label>Email</label><input type="email" name="email" placeholder="anna@email.com" required></div>
+            </div>
+            <div class="fg"><label>Skąd piszesz / gdzie pracujesz?</label><input type="text" name="lokalizacja" placeholder="np. Polska, Niemcy, Holandia..."></div>
+            <div class="fg"><label>Co Cię interesuje?</label>
+              <select name="zainteresowanie">
+                <option>Lekcje indywidualne</option>
+                <option>Zajęcia grupowe</option>
+                <option>Warsztat tematyczny</option>
+                <option>Nie wiem jeszcze — chcę porozmawiać</option>
+              </select>
+            </div>
+            <div class="fg"><label>Twój poziom angielskiego</label>
+              <select name="poziom">
+                <option>Zupełny początkujący</option>
+                <option>Podstawowy (A2)</option>
+                <option>Średniozaawansowany (B1)</option>
+                <option>Wyższy średni (B2)</option>
+                <option>Zaawansowany (C1+)</option>
+                <option>Nie wiem / trudno ocenić</option>
+              </select>
+            </div>
+            <div class="fg"><label>Co chcesz osiągnąć? (opcjonalnie)</label><textarea name="wiadomosc" placeholder="np. Potrzebuję angielskiego do pracy w Niemczech, chcę przestać bać się mówienia..."></textarea></div>
+            <button type="submit" class="fsub" id="fsub-ind">Wyślij — zacznij swoją przygodę →</button>
+          </form>
+          <div id="sukces-ind" style="display:none;text-align:center;padding:2.5rem 1rem">
+            <div style="font-size:2.5rem;margin-bottom:0.75rem">🌟</div>
+            <p style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--ink);margin-bottom:0.5rem;font-weight:500">Wysłano! Dziękuję!</p>
+            <p style="font-size:0.88rem;color:var(--muted)">Odezwę się wkrótce!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- B2B PANEL -->
+    <div class="contact-panel" id="cp-b2b" style="display:none">
+
+      <!-- B2B offer description -->
+      <div class="b2b-contact-desc fade-up">
+        <div class="bcd-grid">
+          <div class="bcd-card">
+            <div class="bcd-ic">📧</div>
+            <h4>Komunikacja biznesowa</h4>
+            <p>Maile, raporty, oferty — pisanie po angielsku profesjonalnie i bez bólu głowy. Szablony gotowe do użycia od razu.</p>
+          </div>
+          <div class="bcd-card">
+            <div class="bcd-ic">🤝</div>
+            <h4>Spotkania i negocjacje</h4>
+            <p>Prowadzenie callów, negocjacje z partnerami, obsługa klientów zagranicznych. Symulacje z realnych scenariuszy Twojej firmy.</p>
+          </div>
+          <div class="bcd-card">
+            <div class="bcd-ic">📊</div>
+            <h4>Prezentacje i wystąpienia</h4>
+            <p>Prezentacje dla zarządu i klientów. Nagranie, feedback, gotowe frazy — mów pewnie, zostaw wrażenie.</p>
+          </div>
+          <div class="bcd-card">
+            <div class="bcd-ic">📋</div>
+            <h4>Co dostajesz w pakiecie</h4>
+            <ul class="bcd-list">
+              <li>Indywidualna wycena i program</li>
+              <li>Grafik dopasowany do zespołu</li>
+              <li>Miesięczny raport postępów</li>
+              <li>Materiały i notatki po każdej lekcji</li>
+              <li>Faktura VAT</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="ci fade-up">
+          <h3>Jak wygląda współpraca?</h3>
+          <p class="ci-body">Napisz do mnie, a przygotуję bezpłatną ofertę dopasowaną do Twojej firmy. Odpowiadam w ciągu 24 godzin roboczych.</p>
+          <ul class="steps">
+            <li><div class="step-n sage-n">1</div><div class="step-txt"><strong>Wyślij zapytanie</strong><span>Powiedz mi o firmie, zespole i potrzebach</span></div></li>
+            <li><div class="step-n sage-n">2</div><div class="step-txt"><strong>Bezpłatna konsultacja</strong><span>30 min — omówimy cele i dobierzemy program</span></div></li>
+            <li><div class="step-n sage-n">3</div><div class="step-txt"><strong>Oferta i wycena</strong><span>Indywidualny program z ceną — bez ukrytych kosztów</span></div></li>
+            <li><div class="step-n sage-n">4</div><div class="step-txt"><strong>Startujemy!</strong><span>Ustalamy harmonogram i ruszamy z zespołem</span></div></li>
+          </ul>
+          <div class="contact-note b2b-note">
+            <p>🏢 Faktura VAT + raport postępów</p>
+            <span>Pełna dokumentacja dla działu HR i księgowości. Elastyczny grafik dla całego zespołu.</span>
+          </div>
+        </div>
+        <div class="cform fade-up">
+          <form action="https://formspree.io/f/mredgdgq" method="POST" id="form-b2b">
+            <input type="hidden" name="typ" value="Firma">
+            <div class="frow">
+              <div class="fg"><label>Imię i nazwisko</label><input type="text" name="imie" placeholder="Anna Kowalska" required></div>
+              <div class="fg"><label>Email służbowy</label><input type="email" name="email" placeholder="anna@firma.pl" required></div>
+            </div>
+            <div class="frow">
+              <div class="fg"><label>Nazwa firmy</label><input type="text" name="firma" placeholder="Nazwa Sp. z o.o." required></div>
+              <div class="fg"><label>Stanowisko</label><input type="text" name="stanowisko" placeholder="np. HR Manager, CEO"></div>
+            </div>
+            <div class="frow">
+              <div class="fg"><label>Liczba uczestników</label>
+                <select name="liczba_osob">
+                  <option>1–3 osoby</option>
+                  <option>4–8 osób</option>
+                  <option>9–15 osób</option>
+                  <option>16+ osób</option>
+                  <option>Jeszcze nie wiem</option>
+                </select>
+              </div>
+              <div class="fg"><label>Orientacyjny budżet</label>
+                <select name="budzet">
+                  <option>Do 500 zł / mies.</option>
+                  <option>500–1500 zł / mies.</option>
+                  <option>1500–3000 zł / mies.</option>
+                  <option>3000+ zł / mies.</option>
+                  <option>Do ustalenia</option>
+                </select>
+              </div>
+            </div>
+            <div class="fg"><label>Czego potrzebuje Twój zespół?</label>
+              <select name="zakres">
+                <option>Komunikacja biznesowa (maile, raporty)</option>
+                <option>Spotkania i rozmowy z klientami</option>
+                <option>Prezentacje i wystąpienia</option>
+                <option>Ogólny angielski w pracy</option>
+                <option>Kilka obszarów — opiszę poniżej</option>
+              </select>
+            </div>
+            <div class="fg"><label>Dodatkowe informacje (opcjonalnie)</label><textarea name="wiadomosc" placeholder="np. Mamy dział sprzedaży 6 osób, rozmawiają z klientami z UK i Niemiec, potrzebujemy głównie speaking i e-maile..."></textarea></div>
+            <button type="submit" class="fsub fsub-sage" id="fsub-b2b">Wyślij zapytanie — otrzymaj bezpłatną ofertę →</button>
+          </form>
+          <div id="sukces-b2b" style="display:none;text-align:center;padding:2.5rem 1rem">
+            <div style="font-size:2.5rem;margin-bottom:0.75rem">🏢</div>
+            <p style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--ink);margin-bottom:0.5rem;font-weight:500">Zapytanie wysłane!</p>
+            <p style="font-size:0.88rem;color:var(--muted)">Przygotuję ofertę i odezwę się w ciągu 24h roboczych.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
 <footer>
-  <div class="fi">
-    <div><div class="fl">Jeju!</div><span class="fl-s">jakie to proste — angielski online</span></div>
-    <ul class="flinks">
-      <li><a href="#o-mnie">O mnie</a></li>
-      <li><a href="#zajecia">Zajęcia</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#ebooki">Ebooki</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
-    </ul>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="fl">Jeju!</div>
+        <span class="fl-s">jakie to proste — angielski online</span>
+        <p>Nauka angielskiego dla Polaków — indywidualnie i firmowo. 100% online. Lekcje próbne bezpłatne.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Dla osób prywatnych</h5>
+        <ul>
+          <li><a href="#zajecia">Lekcje indywidualne</a></li>
+          <li><a href="#zajecia">Zajęcia grupowe</a></li>
+          <li><a href="#zajecia">Warsztaty</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Dla firm</h5>
+        <ul>
+          <li><a href="#firmy">Szkolenia firmowe</a></li>
+          <li><a href="#firmy">Grupy działowe</a></li>
+          <li><a href="#firmy">Intensyw prezentacyjny</a></li>
+          <li><a href="#kontakt" onclick="setTimeout(()=>switchContact('b2b'),500)">Zapytanie o wycenę</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Strona</h5>
+        <ul>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#opinie">Opinie</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="fcopy">© 2026 Jeju! jakie to proste — nauka angielskiego online dla Polaków. Wszelkie prawa zastrzeżone.</span>
+      <div class="foot-legal">
+        <a href="#">Polityka prywatności</a>
+        <a href="#">Regulamin</a>
+      </div>
+    </div>
   </div>
-  <div class="fcopy">© 2026 Jeju! jakie to proste — nauka angielskiego online dla Polaków. Wszelkie prawa zastrzeżone.</div>
 </footer>
- 
+
 <script>
+// scroll animations
 document.querySelectorAll('.fade-up').forEach(el=>{
   new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});
-  },{threshold:0.08}).observe(el);
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible')}});
+  },{threshold:0.07}).observe(el);
 });
- 
+
+// portfolio filter
 function fp(btn,cat){
   document.querySelectorAll('.ptab').forEach(t=>t.classList.remove('active'));
   btn.classList.add('active');
-  document.querySelectorAll('.pi').forEach(i=>{
+  document.querySelectorAll('.port-item').forEach(i=>{
     i.style.display=(cat==='all'||i.dataset.c===cat)?'block':'none';
   });
 }
- 
+
+// audience toggle
+function switchAudience(type,btn){
+  document.querySelectorAll('.atbtn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelector('.ind-panel').style.display = type==='ind'?'grid':'none';
+  document.querySelector('.b2b-panel').style.display = type==='b2b'?'grid':'none';
+}
+function showB2B(){
+  const el=document.getElementById('zajecia');
+  el.scrollIntoView({behavior:'smooth'});
+  setTimeout(()=>{
+    switchAudience('b2b',document.querySelectorAll('.atbtn')[1]);
+  },600);
+}
+
+// mobile menu
 function toggleMenu(){
   const links=document.querySelector('.nav-links');
-  if(links.style.display==='flex'){
+  const open=links.style.display==='flex';
+  if(open){
     links.style.cssText='';
-  } else {
-    links.style.display='flex';
-    links.style.flexDirection='column';
-    links.style.position='fixed';
-    links.style.top='60px';
-    links.style.left='0';
-    links.style.right='0';
-    links.style.background='rgba(253,248,242,0.98)';
-    links.style.padding='1rem 2rem 1.5rem';
-    links.style.borderBottom='1px solid rgba(196,97,42,0.15)';
-    links.style.gap='1rem';
-    links.style.zIndex='99';
+  }else{
+    Object.assign(links.style,{display:'flex',flexDirection:'column',position:'fixed',top:'66px',left:'0',right:'0',background:'rgba(253,250,246,0.98)',padding:'1rem 2rem 1.5rem',borderBottom:'1px solid rgba(184,92,42,0.15)',gap:'0.25rem',zIndex:'99',backdropFilter:'blur(14px)'});
   }
 }
- 
-const form = document.getElementById('yeyu-form');
-if(form){
-  form.addEventListener('submit', async function(e){
+
+// contact toggle
+function switchContact(type){
+  const indBtn=document.getElementById('ct-ind');
+  const b2bBtn=document.getElementById('ct-b2b');
+  const indPanel=document.getElementById('cp-ind');
+  const b2bPanel=document.getElementById('cp-b2b');
+  if(type==='ind'){
+    indBtn.classList.add('active');indBtn.classList.remove('sage-active');
+    b2bBtn.classList.remove('active','sage-active');
+    indPanel.style.display='block';b2bPanel.style.display='none';
+  }else{
+    b2bBtn.classList.add('active','sage-active');
+    indBtn.classList.remove('active');
+    b2bPanel.style.display='block';indPanel.style.display='none';
+  }
+}
+
+// also trigger B2B contact panel from footer/nav
+function showB2BContact(){
+  document.getElementById('kontakt').scrollIntoView({behavior:'smooth'});
+  setTimeout(()=>switchContact('b2b'),500);
+}
+
+// form handler factory
+function setupForm(formId,btnId,suksesId){
+  const form=document.getElementById(formId);
+  if(!form)return;
+  form.addEventListener('submit',async function(e){
     e.preventDefault();
-    const btn = document.getElementById('fsub');
-    btn.textContent = 'Wysyłam...';
-    btn.disabled = true;
-    const data = new FormData(form);
-    const response = await fetch(form.action, {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    });
-    if(response.ok){
-      form.style.display = 'none';
-      document.getElementById('sukces').style.display = 'block';
-    } else {
-      btn.textContent = 'Coś poszło nie tak — spróbuj ponownie';
-      btn.style.background = '#E24B4A';
-      btn.disabled = false;
+    const btn=document.getElementById(btnId);
+    const orig=btn.textContent;
+    btn.textContent='Wysyłam...';btn.disabled=true;
+    const resp=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
+    if(resp.ok){
+      form.style.display='none';
+      document.getElementById(suksesId).style.display='block';
+    }else{
+      btn.textContent='Coś poszło nie tak — spróbuj ponownie';
+      btn.style.background='#C0392B';btn.disabled=false;
     }
   });
 }
+setupForm('form-ind','fsub-ind','sukces-ind');
+setupForm('form-b2b','fsub-b2b','sukces-b2b');
 </script>
 </body>
 </html>
- 
