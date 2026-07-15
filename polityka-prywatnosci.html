@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polityka prywatności — The English Studio</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%23B85C2A'/></svg>">
+<meta name="description" content="Polityka prywatności — The English Studio. Informacje o przetwarzaniu danych osobowych zgodnie z RODO.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1A1410;
+  --warm:#2D2118;
+  --terra:#B85C2A;
+  --terra-soft:#E8C4A8;
+  --terra-pale:#F9F0E8;
+  --sage:#5C7A60;
+  --sage-pale:#E8F0E9;
+  --gold:#C4962A;
+  --muted:#6B5D54;
+  --line:rgba(184,92,42,0.14);
+  --cream:#FDFAF6;
+  --smoke:#F5F0EA;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(253,250,246,0.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1160px;margin:0 auto;padding:0 2rem;height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo-mark{display:flex;flex-direction:column;align-items:flex-start;gap:0.05rem;text-decoration:none}
+.logo-main{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--terra);letter-spacing:-0.5px;line-height:1.05}
+.logo-sub{font-size:0.6rem;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:var(--muted);line-height:1}
+.nav-links{display:flex;gap:0.1rem;list-style:none}
+.nav-links a{white-space:nowrap;text-decoration:none;color:var(--muted);font-size:0.77rem;font-weight:400;padding:0.4rem 0.6rem;border-radius:6px;transition:all 0.18s}
+.nav-links a:hover,.nav-links a.active{color:var(--terra);background:var(--terra-pale)}
+.nav-cta{background:var(--terra);color:white;padding:0.5rem 1.2rem;border-radius:8px;font-size:0.8rem;font-weight:500;text-decoration:none;transition:all 0.2s;letter-spacing:0.3px}
+.nav-cta:hover{background:var(--warm);transform:translateY(-1px)}
+.nav-mob{display:none;background:none;border:none;cursor:pointer;color:var(--terra);font-size:1.3rem}
+
+.page-head{padding:8.5rem 2rem 3rem;background:var(--cream);position:relative;overflow:hidden}
+.page-head-bg{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:60px 60px;opacity:0.4;pointer-events:none}
+.page-head-inner{max-width:840px;margin:0 auto;position:relative}
+.crumb{font-size:0.75rem;color:var(--muted);margin-bottom:1rem}
+.crumb a{color:var(--terra);text-decoration:none}
+.sec-label{font-size:0.68rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--terra);margin-bottom:0.6rem}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3vw,2.5rem);color:var(--ink);margin-bottom:0.6rem;line-height:1.2;font-weight:500}
+.updated{font-size:0.8rem;color:var(--muted);font-style:italic}
+
+.fillnote{max-width:840px;margin:0 auto 2rem;background:var(--terra-pale);border:1px solid rgba(184,92,42,0.25);border-radius:12px;padding:1rem 1.25rem;font-size:0.85rem;color:var(--warm);line-height:1.7}
+.fillnote strong{color:var(--terra)}
+
+.legal-sec{padding:1rem 2rem 5rem;background:var(--cream)}
+.legal-inner{max-width:840px;margin:0 auto;background:white;border:1px solid var(--line);border-radius:16px;padding:2.5rem}
+.legal-inner h2{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--ink);margin:2rem 0 0.75rem;font-weight:600}
+.legal-inner h2:first-child{margin-top:0}
+.legal-inner p{font-size:0.87rem;color:var(--muted);line-height:1.85;margin-bottom:0.85rem}
+.legal-inner ul{margin:0.5rem 0 0.85rem 1.2rem;color:var(--muted);font-size:0.87rem;line-height:1.85}
+.legal-inner li{margin-bottom:0.35rem}
+.legal-inner strong{color:var(--ink);font-weight:500}
+.fillme{background:var(--sage-pale);color:var(--sage);padding:1px 6px;border-radius:4px;font-weight:600;font-size:0.85em}
+.legal-inner table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.83rem}
+.legal-inner th,.legal-inner td{text-align:left;padding:0.6rem 0.7rem;border-bottom:1px solid var(--line);color:var(--muted)}
+.legal-inner th{color:var(--ink);font-weight:600;background:var(--smoke)}
+
+footer{background:var(--ink);padding:3rem 2rem 1.75rem}
+.foot-inner{max-width:1160px;margin:0 auto}
+.foot-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem}
+.fcopy{font-size:0.7rem;color:rgba(255,255,255,0.22)}
+.foot-legal{display:flex;gap:1.25rem}
+.foot-legal a{font-size:0.7rem;color:rgba(255,255,255,0.3);text-decoration:none;transition:color 0.2s}
+.foot-legal a:hover{color:rgba(255,255,255,0.65)}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-mob{display:block}
+  .legal-inner{padding:1.5rem}
+  .foot-bottom{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo-mark">
+      <span class="logo-main">The English Studio</span>
+      <span class="logo-sub">nauka angielskiego online</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#zajecia">Dla osób indywidualnych</a></li>
+      <li><a href="index.html?firma=1#zajecia">Dla firm</a></li>
+      <li><a href="index.html#zajecia">Oferta</a></li>
+      <li><a href="harmonogram.html">Harmonogram</a></li>
+      <li><a href="index.html#opinie">Opinie</a></li>
+      <li><a href="index.html#kontakt">Kontakt</a></li>
+    </ul>
+    <a href="index.html#kontakt" class="nav-cta">Bezpłatna lekcja próbna</a>
+    <button class="nav-mob" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<div class="page-head">
+  <div class="page-head-bg"></div>
+  <div class="page-head-inner">
+    <div class="crumb"><a href="index.html">Strona główna</a> / Polityka prywatności</div>
+    <div class="sec-label">Dokument prawny</div>
+    <h1 class="sec-title">Polityka prywatności</h1>
+    <p class="updated">Ostatnia aktualizacja: <span class="fillme">[DD.MM.RRRR]</span></p>
+  </div>
+</div>
+
+<div class="fillnote">
+  ⚠️ <strong>Uwaga:</strong> Ten dokument to szablon zgodny z ogólnymi wymogami RODO. Miejsca oznaczone <span class="fillme">tak</span> musisz uzupełnić własnymi danymi przed publikacją. Jeśli prowadzisz działalność w Niemczech, zalecam też konsultację z prawnikiem lub Steuerberaterem — mogą obowiązywać dodatkowe wymogi niemieckiego prawa (np. TMG/TTDSG dot. cookies).
+</div>
+
+<div class="legal-sec">
+  <div class="legal-inner">
+
+    <h2>1. Administrator danych</h2>
+    <p>Administratorem Twoich danych osobowych jest:</p>
+    <p>
+      <strong class="fillme">[Imię i nazwisko / nazwa działalności]</strong><br>
+      <span class="fillme">[adres siedziby / adres do korespondencji]</span><br>
+      NIP / Steuernummer: <span class="fillme">[numer]</span><br>
+      E-mail kontaktowy: <span class="fillme">[adres e-mail]</span>
+    </p>
+    <p>W sprawach dotyczących przetwarzania danych osobowych możesz kontaktować się bezpośrednio pod powyższym adresem e-mail.</p>
+
+    <h2>2. Jakie dane zbieramy</h2>
+    <p>Dane osobowe są zbierane wyłącznie wtedy, gdy sam/a je podajesz — poprzez formularz kontaktowy na stronie. W zależności od wybranego formularza mogą to być:</p>
+    <ul>
+      <li>Imię i nazwisko</li>
+      <li>Adres e-mail</li>
+      <li>Kraj / miejsce pracy (opcjonalnie)</li>
+      <li>Poziom znajomości języka, zainteresowania edukacyjne</li>
+      <li>W formularzu dla firm: nazwa firmy, stanowisko, liczba uczestników, orientacyjny budżet</li>
+      <li>Treść wiadomości, którą zdecydujesz się napisać</li>
+    </ul>
+    <p>Strona nie zbiera automatycznie danych osobowych poprzez pliki cookie ani narzędzia analityczne — obecnie żadne takie narzędzia (np. Google Analytics) nie są zainstalowane. Jeśli to się zmieni, ta polityka zostanie zaktualizowana.</p>
+
+    <h2>3. Cel i podstawa prawna przetwarzania</h2>
+    <p>Dane podane w formularzu kontaktowym przetwarzane są w celu:</p>
+    <ul>
+      <li>udzielenia odpowiedzi na zapytanie oraz przedstawienia oferty (podstawa: art. 6 ust. 1 lit. b RODO — działania podejmowane przed zawarciem umowy, na Twoje żądanie),</li>
+      <li>ewentualnego zawarcia i realizacji umowy o świadczenie usług edukacyjnych (art. 6 ust. 1 lit. b RODO),</li>
+      <li>wystawienia faktury i spełnienia obowiązków księgowych, jeśli dojdzie do współpracy (art. 6 ust. 1 lit. c RODO).</li>
+    </ul>
+
+    <h2>4. Komu przekazujemy dane</h2>
+    <p>Formularze kontaktowe na stronie obsługiwane są przez zewnętrznego dostawcę usług — <strong>Formspree</strong> (Formspree, Inc., USA), który pośredniczy w dostarczeniu wiadomości na skrzynkę e-mail administratora. Formspree może przetwarzać dane na serwerach zlokalizowanych poza Europejskim Obszarem Gospodarczym. Więcej informacji o zabezpieczeniach stosowanych przez Formspree znajdziesz w ich własnej polityce prywatności: <a href="https://formspree.io/legal/privacy-policy" style="color:var(--terra)">formspree.io/legal/privacy-policy</a>.</p>
+    <p>Strona korzysta również z czcionek Google Fonts (Google LLC), które są ładowane z serwerów Google przy wczytywaniu strony — może to wiązać się z przekazaniem adresu IP odwiedzającego do Google w celu dostarczenia odpowiedniej czcionki.</p>
+    <p>Dane nie są sprzedawane ani udostępniane w celach marketingowych podmiotom trzecim.</p>
+
+    <h2>5. Okres przechowywania danych</h2>
+    <p>Dane z zapytań kontaktowych przechowywane są przez okres niezbędny do udzielenia odpowiedzi i ewentualnej realizacji współpracy, nie dłużej niż <span class="fillme">[np. 24 miesiące]</span> od ostatniego kontaktu, chyba że przepisy prawa (np. podatkowe) wymagają dłuższego przechowywania dokumentów księgowych.</p>
+
+    <h2>6. Twoje prawa</h2>
+    <p>Zgodnie z RODO przysługuje Ci prawo do:</p>
+    <ul>
+      <li>dostępu do swoich danych,</li>
+      <li>sprostowania (poprawienia) danych,</li>
+      <li>usunięcia danych ("prawo do bycia zapomnianym"),</li>
+      <li>ograniczenia przetwarzania,</li>
+      <li>przenoszenia danych,</li>
+      <li>wniesienia sprzeciwu wobec przetwarzania,</li>
+      <li>wniesienia skargi do organu nadzorczego — w Polsce jest to Prezes Urzędu Ochrony Danych Osobowych (UODO), a w Niemczech właściwy krajowy organ ds. ochrony danych (Landesdatenschutzbehörde).</li>
+    </ul>
+    <p>Aby skorzystać z powyższych praw, napisz na adres e-mail podany w punkcie 1.</p>
+
+    <h2>7. Dobrowolność podania danych</h2>
+    <p>Podanie danych w formularzu kontaktowym jest dobrowolne, ale niezbędne do udzielenia odpowiedzi na zapytanie lub przygotowania oferty.</p>
+
+    <h2>8. Zmiany w polityce prywatności</h2>
+    <p>Niniejsza polityka może być okresowo aktualizowana — na przykład w związku z wprowadzeniem nowych funkcji strony (np. narzędzi analitycznych, systemu rezerwacji online). Aktualna wersja zawsze dostępna jest pod tym adresem.</p>
+
+  </div>
+</div>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-bottom">
+      <span class="fcopy">© 2026 The English Studio — nauka angielskiego online. Wszelkie prawa zastrzeżone.</span>
+      <div class="foot-legal">
+        <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+        <a href="regulamin.html">Regulamin</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
