@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harmonogram zajęć — The English Studio</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%23B85C2A'/></svg>">
+<meta name="description" content="Harmonogram zajęć grupowych, indywidualnych i warsztatów — The English Studio. Trzy semestry, trzy grupy, jasny grafik na cały rok.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1A1410;
+  --warm:#2D2118;
+  --terra:#B85C2A;
+  --terra-soft:#E8C4A8;
+  --terra-pale:#F9F0E8;
+  --sage:#5C7A60;
+  --sage-pale:#E8F0E9;
+  --gold:#C4962A;
+  --gold-pale:#F5EDD5;
+  --muted:#6B5D54;
+  --line:rgba(184,92,42,0.14);
+  --white:#fff;
+  --cream:#FDFAF6;
+  --smoke:#F5F0EA;
+  --blue-pale:#E4EEF7;
+  --blue:#3D6E9E;
+  --purple-pale:#EDE8F5;
+  --purple:#7A5A9E;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+
+/* ── NAV (matches homepage) ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(253,250,246,0.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1160px;margin:0 auto;padding:0 2rem;height:66px;display:flex;align-items:center;justify-content:space-between}
+.logo-mark{display:flex;align-items:baseline;gap:0.4rem;text-decoration:none}
+.logo-main{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:600;color:var(--terra);letter-spacing:-0.5px}
+.logo-sub{font-size:0.68rem;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted)}
+.nav-links{display:flex;gap:0.25rem;list-style:none}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:0.8rem;font-weight:400;padding:0.4rem 0.75rem;border-radius:6px;transition:all 0.18s}
+.nav-links a:hover,.nav-links a.active{color:var(--terra);background:var(--terra-pale)}
+.nav-cta{background:var(--terra);color:white;padding:0.5rem 1.2rem;border-radius:8px;font-size:0.8rem;font-weight:500;text-decoration:none;transition:all 0.2s;letter-spacing:0.3px}
+.nav-cta:hover{background:var(--warm);transform:translateY(-1px)}
+.nav-mob{display:none;background:none;border:none;cursor:pointer;color:var(--terra);font-size:1.3rem}
+
+/* ── PAGE HEADER ── */
+.page-head{padding:8.5rem 2rem 3rem;background:var(--cream);position:relative;overflow:hidden}
+.page-head-bg{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:60px 60px;opacity:0.4;pointer-events:none}
+.page-head-inner{max-width:1160px;margin:0 auto;position:relative}
+.crumb{font-size:0.75rem;color:var(--muted);margin-bottom:1rem}
+.crumb a{color:var(--terra);text-decoration:none}
+.sec-label{font-size:0.68rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--terra);margin-bottom:0.6rem}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3vw,2.7rem);color:var(--ink);margin-bottom:0.8rem;line-height:1.2;font-weight:500}
+.sec-sub{color:var(--muted);font-size:0.92rem;line-height:1.9;max-width:640px;font-weight:300}
+
+/* ── SCHEDULE SECTION ── */
+.sched-sec{padding:1rem 2rem 4rem;background:var(--cream)}
+.sched-inner{max-width:1160px;margin:0 auto}
+
+.legend{display:flex;flex-wrap:wrap;gap:0.85rem;margin-bottom:2rem}
+.leg{display:flex;align-items:center;gap:7px;font-size:0.8rem;color:var(--muted)}
+.leg-sw{width:14px;height:14px;border-radius:4px;flex-shrink:0}
+
+.sched-wrap{overflow-x:auto;border-radius:16px;border:1px solid var(--line);background:white}
+table.sched{width:100%;border-collapse:collapse;min-width:640px}
+table.sched th, table.sched td{padding:1rem 1.1rem;text-align:center;border-bottom:1px solid var(--line)}
+table.sched th{font-size:0.78rem;font-weight:600;color:var(--ink);background:var(--smoke)}
+table.sched th.term-off{color:var(--muted);font-weight:500}
+table.sched td.rowlabel{text-align:left;font-size:0.84rem;font-weight:600;color:var(--ink);white-space:nowrap}
+table.sched td.rowlabel span{display:block;font-size:0.72rem;font-weight:400;color:var(--muted);margin-top:2px}
+table.sched tr:last-child td{border-bottom:none}
+.cell{display:inline-flex;align-items:center;justify-content:center;min-width:64px;padding:0.4rem 0.7rem;border-radius:8px;font-size:0.82rem;font-weight:600}
+.cell.off{background:none;color:var(--muted);font-weight:400;font-style:italic;font-size:0.78rem}
+.c-a{background:var(--blue-pale);color:var(--blue)}
+.c-b{background:var(--sage-pale);color:var(--sage)}
+.c-c{background:var(--gold-pale);color:#96741f}
+.c-ind{background:var(--purple-pale);color:var(--purple)}
+.c-work{background:var(--terra-pale);color:var(--terra)}
+.section-gap td{border-bottom:none;padding-top:1.6rem}
+
+/* ── EXPLAINER CARDS ── */
+.explain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.1rem;margin-top:2.5rem}
+.exp-card{background:white;border:1px solid var(--line);border-radius:14px;padding:1.4rem;transition:all 0.2s}
+.exp-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,20,16,0.06)}
+.exp-ic{font-size:1.4rem;margin-bottom:0.6rem}
+.exp-card h4{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--ink);margin-bottom:0.4rem;font-weight:500}
+.exp-card p{font-size:0.82rem;color:var(--muted);line-height:1.75}
+
+.cta-strip{margin-top:3rem;background:var(--ink);border-radius:18px;padding:2.5rem 2rem;text-align:center}
+.cta-strip h3{font-family:'Cormorant Garamond',serif;color:white;font-size:1.5rem;margin-bottom:0.6rem;font-weight:500}
+.cta-strip p{color:rgba(255,255,255,0.5);font-size:0.86rem;margin-bottom:1.5rem}
+.btn-primary{background:var(--terra);color:white;padding:0.78rem 1.7rem;border-radius:8px;text-decoration:none;font-weight:500;font-size:0.88rem;transition:all 0.2s;display:inline-flex;align-items:center;gap:7px}
+.btn-primary:hover{background:#d97a3f;transform:translateY(-2px)}
+
+/* ── FOOTER (matches homepage) ── */
+footer{background:var(--ink);padding:3rem 2rem 1.75rem}
+.foot-inner{max-width:1160px;margin:0 auto}
+.foot-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem}
+.fcopy{font-size:0.7rem;color:rgba(255,255,255,0.22)}
+.foot-legal{display:flex;gap:1.25rem}
+.foot-legal a{font-size:0.7rem;color:rgba(255,255,255,0.3);text-decoration:none;transition:color 0.2s}
+.foot-legal a:hover{color:rgba(255,255,255,0.65)}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-mob{display:block}
+  .foot-bottom{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo-mark">
+      <span class="logo-main">The English Studio</span>
+      <span class="logo-sub">nauka angielskiego online</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#zajecia">Oferta</a></li>
+      <li><a href="harmonogram.html" class="active">Harmonogram</a></li>
+      <li><a href="index.html#opinie">Opinie</a></li>
+      <li><a href="index.html#kontakt">Kontakt</a></li>
+    </ul>
+    <a href="index.html#kontakt" class="nav-cta">Bezpłatna lekcja próbna</a>
+    <button class="nav-mob" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<div class="page-head">
+  <div class="page-head-bg"></div>
+  <div class="page-head-inner">
+    <div class="crumb"><a href="index.html">Strona główna</a> / Harmonogram</div>
+    <div class="sec-label">Grafik zajęć</div>
+    <h1 class="sec-title">Harmonogram na cały rok — <em style="color:var(--terra);font-style:italic">jasny i przewidywalny</em></h1>
+    <p class="sec-sub">Trzy semestry, trzy grupy do wyboru, indywidualne lekcje bez przerwy i regularne warsztaty. Sierpień i grudzień to miesiące wolne od zajęć grupowych — czas na odpoczynek dla Ciebie i dla mnie.</p>
+  </div>
+</div>
+
+<div class="sched-sec">
+  <div class="sched-inner">
+
+    <div class="legend">
+      <div class="leg"><span class="leg-sw" style="background:var(--blue-pale)"></span>Grupa A</div>
+      <div class="leg"><span class="leg-sw" style="background:var(--sage-pale)"></span>Grupa B</div>
+      <div class="leg"><span class="leg-sw" style="background:var(--gold-pale)"></span>Grupa C</div>
+      <div class="leg"><span class="leg-sw" style="background:var(--purple-pale)"></span>Lekcje indywidualne</div>
+      <div class="leg"><span class="leg-sw" style="background:var(--terra-pale)"></span>Warsztaty</div>
+    </div>
+
+    <div class="sched-wrap">
+      <table class="sched">
+        <thead>
+          <tr>
+            <th style="text-align:left">Format</th>
+            <th>Semestr 1<br><span style="font-weight:400">sty–kwi</span></th>
+            <th>Semestr 2<br><span style="font-weight:400">kwi–lip</span></th>
+            <th class="term-off">Sierpień<br><span style="font-weight:400">przerwa</span></th>
+            <th>Semestr 3<br><span style="font-weight:400">wrz–lis</span></th>
+            <th class="term-off">Grudzień<br><span style="font-weight:400">przerwa</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="rowlabel">Grupa A<span>pon/śr 18:00–19:00</span></td>
+            <td><span class="cell c-a">A1</span></td>
+            <td><span class="cell c-a">A2</span></td>
+            <td><span class="cell off">wolne</span></td>
+            <td><span class="cell c-a">B1</span></td>
+            <td><span class="cell off">wolne</span></td>
+          </tr>
+          <tr>
+            <td class="rowlabel">Grupa B<span>wt/czw 18:00–19:00</span></td>
+            <td><span class="cell c-b">A1</span></td>
+            <td><span class="cell c-b">A2</span></td>
+            <td><span class="cell off">wolne</span></td>
+            <td><span class="cell c-b">B1</span></td>
+            <td><span class="cell off">wolne</span></td>
+          </tr>
+          <tr>
+            <td class="rowlabel">Grupa C<span>sob 10:00–12:00</span></td>
+            <td><span class="cell c-c">A1</span></td>
+            <td><span class="cell c-c">A2</span></td>
+            <td><span class="cell off">wolne</span></td>
+            <td><span class="cell c-c">B1</span></td>
+            <td><span class="cell off">wolne</span></td>
+          </tr>
+          <tr class="section-gap">
+            <td class="rowlabel">Indywidualne<span>pon–czw, codziennie</span></td>
+            <td><span class="cell c-ind">1:1 w toku</span></td>
+            <td><span class="cell c-ind">1:1 w toku</span></td>
+            <td><span class="cell off">wolne</span></td>
+            <td><span class="cell c-ind">1:1 w toku</span></td>
+            <td><span class="cell off">wolne</span></td>
+          </tr>
+          <tr>
+            <td class="rowlabel">Warsztaty<span>pt/sob, ~15 osób</span></td>
+            <td><span class="cell c-work">4×/mies.</span></td>
+            <td><span class="cell c-work">4×/mies.</span></td>
+            <td><span class="cell off">wolne</span></td>
+            <td><span class="cell c-work">4×/mies.</span></td>
+            <td><span class="cell off">wolne</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="explain-grid">
+      <div class="exp-card">
+        <div class="exp-ic">📅</div>
+        <h4>Trzy grupy do wyboru</h4>
+        <p>Grupa A (pon/śr), Grupa B (wt/czw) i Grupa C (sob rano) — każda idzie w swoim tempie, ale poziomem: od A1 przez A2 do B1 w ciągu roku.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-ic">📈</div>
+        <h4>Postęp semestr po semestrze</h4>
+        <p>Zaczynasz od podstaw w Semestrze 1, a kończysz rok na poziomie B1. Jeśli dołączysz w trakcie, dobierzemy grupę do Twojego poziomu.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-ic">👤</div>
+        <h4>Indywidualne — bez czekania</h4>
+        <p>Lekcje 1:1 nie są przypisane do semestru — można zacząć w dowolnym momencie, pon–czw.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-ic">🎯</div>
+        <h4>Warsztaty tematyczne</h4>
+        <p>Cztery razy w miesiącu, w piątki lub soboty, w małych grupach do ~15 osób — konkretny temat, konkretny efekt.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-ic">🌿</div>
+        <h4>Sierpień i grudzień — wolne</h4>
+        <p>Te dwa miesiące są celowo bez zajęć grupowych — czas na regenerację, żeby jakość lekcji przez resztę roku była wysoka.</p>
+      </div>
+    </div>
+
+    <div class="cta-strip">
+      <h3>Który termin pasuje do Ciebie?</h3>
+      <p>Napisz, a pomogę dobrać grupę lub umówić lekcję indywidualną.</p>
+      <a href="index.html#kontakt" class="btn-primary">Zapytaj o wolne miejsca →</a>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-bottom">
+      <span class="fcopy">© 2026 The English Studio — nauka angielskiego online dla Polaków. Wszelkie prawa zastrzeżone.</span>
+      <div class="foot-legal">
+        <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+        <a href="regulamin.html">Regulamin</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
