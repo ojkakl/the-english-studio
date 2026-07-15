@@ -830,6 +830,12 @@ function setupForm(formId,btnId,suksesId){
 }
 setupForm('form-ind','fsub-ind','sukces-ind');
 setupForm('form-b2b','fsub-b2b','sukces-b2b');
+  // auto-switch to Firma tab when arriving with ?firma=1
+if (new URLSearchParams(window.location.search).get('firma') === '1') {
+  window.addEventListener('load', function(){
+    setTimeout(function(){ switchContact('b2b'); }, 400);
+  });
+}
 </script>
 </body>
 </html>
