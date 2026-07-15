@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regulamin — The English Studio</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%23B85C2A'/></svg>">
+<meta name="description" content="Regulamin świadczenia usług — The English Studio. Zasady rezerwacji, płatności, odwoływania zajęć oraz reklamacji.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1A1410;
+  --warm:#2D2118;
+  --terra:#B85C2A;
+  --terra-soft:#E8C4A8;
+  --terra-pale:#F9F0E8;
+  --sage:#5C7A60;
+  --sage-pale:#E8F0E9;
+  --gold:#C4962A;
+  --muted:#6B5D54;
+  --line:rgba(184,92,42,0.14);
+  --cream:#FDFAF6;
+  --smoke:#F5F0EA;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(253,250,246,0.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1160px;margin:0 auto;padding:0 2rem;height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo-mark{display:flex;flex-direction:column;align-items:flex-start;gap:0.05rem;text-decoration:none}
+.logo-main{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--terra);letter-spacing:-0.5px;line-height:1.05}
+.logo-sub{font-size:0.6rem;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:var(--muted);line-height:1}
+.nav-links{display:flex;gap:0.1rem;list-style:none}
+.nav-links a{white-space:nowrap;text-decoration:none;color:var(--muted);font-size:0.77rem;font-weight:400;padding:0.4rem 0.6rem;border-radius:6px;transition:all 0.18s}
+.nav-links a:hover,.nav-links a.active{color:var(--terra);background:var(--terra-pale)}
+.nav-cta{background:var(--terra);color:white;padding:0.5rem 1.2rem;border-radius:8px;font-size:0.8rem;font-weight:500;text-decoration:none;transition:all 0.2s;letter-spacing:0.3px}
+.nav-cta:hover{background:var(--warm);transform:translateY(-1px)}
+.nav-mob{display:none;background:none;border:none;cursor:pointer;color:var(--terra);font-size:1.3rem}
+
+.page-head{padding:8.5rem 2rem 3rem;background:var(--cream);position:relative;overflow:hidden}
+.page-head-bg{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:60px 60px;opacity:0.4;pointer-events:none}
+.page-head-inner{max-width:840px;margin:0 auto;position:relative}
+.crumb{font-size:0.75rem;color:var(--muted);margin-bottom:1rem}
+.crumb a{color:var(--terra);text-decoration:none}
+.sec-label{font-size:0.68rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--terra);margin-bottom:0.6rem}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3vw,2.5rem);color:var(--ink);margin-bottom:0.6rem;line-height:1.2;font-weight:500}
+.updated{font-size:0.8rem;color:var(--muted);font-style:italic}
+
+.fillnote{max-width:840px;margin:0 auto 2rem;background:var(--terra-pale);border:1px solid rgba(184,92,42,0.25);border-radius:12px;padding:1rem 1.25rem;font-size:0.85rem;color:var(--warm);line-height:1.7}
+.fillnote strong{color:var(--terra)}
+
+.legal-sec{padding:1rem 2rem 5rem;background:var(--cream)}
+.legal-inner{max-width:840px;margin:0 auto;background:white;border:1px solid var(--line);border-radius:16px;padding:2.5rem}
+.legal-inner h2{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--ink);margin:2rem 0 0.75rem;font-weight:600}
+.legal-inner h2:first-child{margin-top:0}
+.legal-inner p{font-size:0.87rem;color:var(--muted);line-height:1.85;margin-bottom:0.85rem}
+.legal-inner ul,.legal-inner ol{margin:0.5rem 0 0.85rem 1.2rem;color:var(--muted);font-size:0.87rem;line-height:1.85}
+.legal-inner li{margin-bottom:0.35rem}
+.legal-inner strong{color:var(--ink);font-weight:500}
+.fillme{background:var(--sage-pale);color:var(--sage);padding:1px 6px;border-radius:4px;font-weight:600;font-size:0.85em}
+
+footer{background:var(--ink);padding:3rem 2rem 1.75rem}
+.foot-inner{max-width:1160px;margin:0 auto}
+.foot-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem}
+.fcopy{font-size:0.7rem;color:rgba(255,255,255,0.22)}
+.foot-legal{display:flex;gap:1.25rem}
+.foot-legal a{font-size:0.7rem;color:rgba(255,255,255,0.3);text-decoration:none;transition:color 0.2s}
+.foot-legal a:hover{color:rgba(255,255,255,0.65)}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-mob{display:block}
+  .legal-inner{padding:1.5rem}
+  .foot-bottom{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo-mark">
+      <span class="logo-main">The English Studio</span>
+      <span class="logo-sub">nauka angielskiego online</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#zajecia">Dla osób indywidualnych</a></li>
+      <li><a href="index.html?firma=1#zajecia">Dla firm</a></li>
+      <li><a href="index.html#zajecia">Oferta</a></li>
+      <li><a href="harmonogram.html">Harmonogram</a></li>
+      <li><a href="index.html#opinie">Opinie</a></li>
+      <li><a href="index.html#kontakt">Kontakt</a></li>
+    </ul>
+    <a href="index.html#kontakt" class="nav-cta">Bezpłatna lekcja próbna</a>
+    <button class="nav-mob" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<div class="page-head">
+  <div class="page-head-bg"></div>
+  <div class="page-head-inner">
+    <div class="crumb"><a href="index.html">Strona główna</a> / Regulamin</div>
+    <div class="sec-label">Dokument prawny</div>
+    <h1 class="sec-title">Regulamin świadczenia usług <span style="font-size:0.55em;color:var(--muted);font-weight:400">(dla Klientów w Polsce)</span></h1>
+    <p class="updated">Ostatnia aktualizacja: <span class="fillme">[DD.MM.RRRR]</span></p>
+  </div>
+</div>
+
+<div class="fillnote">
+  ⚠️ <strong>Uwaga:</strong> To szablon regulaminu dla klientów w Polsce (usługi edukacyjne: lekcje indywidualne, grupowe, warsztaty, szkolenia B2B), oparty na polskim prawie konsumenckim. Dla klientów niemieckich przygotujemy osobny dokument (AGB), ponieważ obowiązują tam inne przepisy (m.in. Widerrufsrecht). Miejsca oznaczone <span class="fillme">tak</span> musisz uzupełnić własnymi danymi przed publikacją.
+</div>
+
+<div class="legal-sec">
+  <div class="legal-inner">
+
+    <h2>1. Postanowienia ogólne</h2>
+    <p>Niniejszy regulamin określa zasady korzystania z usług edukacyjnych świadczonych przez:</p>
+    <p>
+      <strong class="fillme">[Imię i nazwisko / nazwa działalności]</strong><br>
+      <span class="fillme">[adres siedziby / adres do korespondencji]</span><br>
+      NIP / Steuernummer: <span class="fillme">[numer]</span><br>
+      E-mail kontaktowy: <span class="fillme">[adres e-mail]</span><br>
+      (dalej: <strong>"Usługodawca"</strong>)
+    </p>
+    <p>Usługi obejmują: lekcje indywidualne, zajęcia grupowe, warsztaty tematyczne oraz szkolenia dla firm (B2B), realizowane online, o ile nie ustalono inaczej.</p>
+    <p><strong>Niniejszy regulamin dotyczy Klientów zamawiających usługi jako konsumenci lub przedsiębiorcy z siedzibą / miejscem zamieszkania na terytorium Rzeczypospolitej Polskiej.</strong> Dla Klientów z Niemiec obowiązuje odrębny regulamin (AGB), dostosowany do niemieckiego prawa konsumenckiego.</p>
+
+    <h2>2. Rezerwacja i rozpoczęcie współpracy</h2>
+    <ol>
+      <li>Kontakt następuje poprzez formularz na stronie internetowej, e-mail lub inny uzgodniony kanał.</li>
+      <li>Nowi klienci mają możliwość skorzystania z <strong>bezpłatnej lekcji próbnej</strong> (30 minut) — bez zobowiązania do dalszej współpracy.</li>
+      <li>Rozpoczęcie płatnej współpracy następuje po ustaleniu programu, harmonogramu i ceny między Usługodawcą a Klientem — drogą mailową lub innym uzgodnionym kanałem.</li>
+      <li>Terminy zajęć grupowych zależą od dostępności miejsc w danej grupie; Usługodawca zastrzega sobie prawo do niewielkich zmian harmonogramu, o czym poinformuje z wyprzedzeniem.</li>
+    </ol>
+
+    <h2>3. Płatności</h2>
+    <ol>
+      <li>Ceny lekcji indywidualnych, grupowych i warsztatów ustalane są indywidualnie i przekazywane Klientowi przed rozpoczęciem płatnej współpracy.</li>
+      <li>Płatność następuje <span class="fillme">[np. z góry za pakiet zajęć / miesięcznie / po każdej lekcji]</span>, na numer konta wskazany przez Usługodawcę.</li>
+      <li>Dla klientów biznesowych (B2B) wystawiana jest faktura VAT zgodnie z obowiązującymi przepisami.</li>
+      <li>Brak płatności w wyznaczonym terminie może skutkować zawieszeniem dalszych zajęć do czasu uregulowania należności.</li>
+    </ol>
+
+    <h2>4. Odwoływanie i przekładanie zajęć</h2>
+    <ol>
+      <li>Klient może odwołać lub przełożyć lekcję indywidualną najpóźniej <span class="fillme">[np. 24 godziny]</span> przed jej planowanym rozpoczęciem, bez ponoszenia dodatkowych kosztów.</li>
+      <li>Odwołanie zajęć po tym terminie <span class="fillme">[np. skutkuje utratą opłaconej lekcji / możliwością jednorazowego przełożenia]</span>.</li>
+      <li>W przypadku choroby lub innej nagłej niedyspozycji Usługodawcy, lekcja zostanie przełożona na inny termin lub odpracowana bez dodatkowych kosztów dla Klienta.</li>
+      <li>Zasady odwoływania zajęć grupowych i warsztatów mogą się różnić — szczegóły przekazywane są przy zapisie na dany format.</li>
+    </ol>
+
+    <h2>5. Przebieg zajęć</h2>
+    <ol>
+      <li>Zajęcia odbywają się online, za pośrednictwem platformy <span class="fillme">[np. Google Meet]</span>, o ile nie uzgodniono inaczej.</li>
+      <li>Klient zobowiązany jest zapewnić sobie stabilne łącze internetowe oraz sprzęt (mikrofon, kamera) niezbędny do udziału w zajęciach.</li>
+      <li>Materiały edukacyjne przekazywane Klientowi po zajęciach przeznaczone są wyłącznie do jego użytku prywatnego / firmowego i nie mogą być rozpowszechniane, sprzedawane ani udostępniane osobom trzecim bez zgody Usługodawcy.</li>
+    </ol>
+
+    <h2>6. Reklamacje</h2>
+    <ol>
+      <li>Klient ma prawo zgłosić reklamację dotyczącą jakości świadczonych usług na adres e-mail wskazany w punkcie 1.</li>
+      <li>Reklamacja powinna zawierać opis zastrzeżeń oraz oczekiwany sposób ich rozwiązania.</li>
+      <li>Usługodawca rozpatrzy reklamację w terminie <span class="fillme">[np. 14 dni roboczych]</span> od jej otrzymania.</li>
+    </ol>
+
+    <h2>7. Odpowiedzialność</h2>
+    <p>Usługodawca dokłada należytej staranności w realizacji usług edukacyjnych, jednak nie gwarantuje osiągnięcia przez Klienta konkretnego poziomu językowego w określonym czasie — postępy zależą również od zaangażowania i regularności pracy własnej Klienta.</p>
+
+    <h2>8. Prawo odstąpienia od umowy (konsumenci)</h2>
+    <p>Klientom będącym konsumentami przysługuje prawo odstąpienia od umowy zawartej na odległość w terminie 14 dni, zgodnie z ustawą z dnia 30 maja 2014 r. o prawach konsumenta. Prawo to nie przysługuje, jeśli usługa została w pełni wykonana za wyraźną zgodą konsumenta przed upływem terminu do odstąpienia (np. w przypadku skorzystania z bezpłatnej lekcji próbnej i świadomej rezygnacji z terminu odstąpienia przy rozpoczęciu płatnych zajęć). Szczegółowe informacje o sposobie i terminie odstąpienia zostaną przekazane Klientowi przy zawieraniu umowy, wraz ze wzorem formularza odstąpienia.</p>
+
+    <h2>9. Ochrona danych osobowych</h2>
+    <p>Zasady przetwarzania danych osobowych Klientów opisane są w odrębnym dokumencie: <a href="polityka-prywatnosci.html" style="color:var(--terra)">Polityka prywatności</a>.</p>
+
+    <h2>10. Postanowienia końcowe</h2>
+    <ol>
+      <li>Usługodawca zastrzega sobie prawo do zmiany niniejszego regulaminu. O zmianach Klienci prowadzący aktywną współpracę zostaną poinformowani drogą mailową.</li>
+      <li>W sprawach nieuregulowanych niniejszym regulaminem zastosowanie mają przepisy prawa polskiego, w tym Kodeksu cywilnego oraz ustawy o prawach konsumenta.</li>
+      <li>Ewentualne spory strony będą starały się rozwiązać polubownie; w przypadku braku porozumienia właściwy będzie sąd powszechny właściwy dla siedziby Usługodawcy, z zastrzeżeniem bezwzględnie obowiązujących przepisów dotyczących właściwości sądu w sporach konsumenckich.</li>
+    </ol>
+
+  </div>
+</div>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-bottom">
+      <span class="fcopy">© 2026 The English Studio — nauka angielskiego online. Wszelkie prawa zastrzeżone.</span>
+      <div class="foot-legal">
+        <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+        <a href="regulamin.html">Regulamin</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
