@@ -30,6 +30,8 @@
   --blue:#3D6E9E;
   --purple-pale:#EDE8F5;
   --purple:#7A5A9E;
+  --rose-pale:#F6E1E8;
+  --rose:#B2456B;
 }
 html{scroll-behavior:smooth}
 body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
@@ -74,13 +76,16 @@ table.sched td.rowlabel{text-align:left;font-size:0.84rem;font-weight:600;color:
 table.sched td.rowlabel span{display:block;font-size:0.72rem;font-weight:400;color:var(--muted);margin-top:2px}
 table.sched tr:last-child td{border-bottom:none}
 .cell{display:inline-flex;align-items:center;justify-content:center;min-width:64px;padding:0.4rem 0.7rem;border-radius:8px;font-size:0.82rem;font-weight:600}
-.cell.off{background:none;color:var(--muted);font-weight:400;font-style:italic;font-size:0.78rem}
+.cell.off{background:none;color:var(--muted);font-weight:400;font-style:italic;font-size:0.78rem;text-decoration:line-through;text-decoration-color:rgba(107,93,84,0.5);opacity:0.55}
 .c-a{background:var(--blue-pale);color:var(--blue)}
 .c-b{background:var(--sage-pale);color:var(--sage)}
 .c-c{background:var(--gold-pale);color:#96741f}
-.c-ind{background:var(--purple-pale);color:var(--purple)}
+.c-ind{background:var(--rose-pale);color:var(--rose)}
 .c-work{background:var(--terra-pale);color:var(--terra)}
 .section-gap td{border-bottom:none;padding-top:1.6rem}
+.cell-note{display:block;font-size:0.66rem;color:var(--muted);margin-top:3px;font-style:italic}
+.audience-note{background:white;border:1px solid var(--line);border-radius:12px;padding:1rem 1.2rem;margin-bottom:1.5rem;font-size:0.83rem;color:var(--muted);line-height:1.7}
+.audience-note strong{color:var(--ink)}
 
 /* ── EXPLAINER CARDS ── */
 .explain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.1rem;margin-top:2.5rem}
@@ -144,11 +149,15 @@ footer{background:var(--ink);padding:3rem 2rem 1.75rem}
 <div class="sched-sec">
   <div class="sched-inner">
 
+    <div class="audience-note">
+      📌 Powyższy grafik dotyczy <strong>klientów indywidualnych</strong>. Dla <strong>firm</strong> terminy i format ustalamy indywidualnie — zależnie od liczby uczestników i preferowanych godzin. <a href="index.html#kontakt" style="color:var(--terra);font-weight:500">Napisz, żeby to omówić →</a>
+    </div>
+
     <div class="legend">
       <div class="leg"><span class="leg-sw" style="background:var(--blue-pale)"></span>Grupa A</div>
       <div class="leg"><span class="leg-sw" style="background:var(--sage-pale)"></span>Grupa B</div>
       <div class="leg"><span class="leg-sw" style="background:var(--gold-pale)"></span>Grupa C</div>
-      <div class="leg"><span class="leg-sw" style="background:var(--purple-pale)"></span>Lekcje indywidualne</div>
+      <div class="leg"><span class="leg-sw" style="background:var(--rose-pale)"></span>Lekcje indywidualne</div>
       <div class="leg"><span class="leg-sw" style="background:var(--terra-pale)"></span>Warsztaty</div>
     </div>
 
@@ -198,11 +207,11 @@ footer{background:var(--ink);padding:3rem 2rem 1.75rem}
             <td><span class="cell off">wolne</span></td>
           </tr>
           <tr>
-            <td class="rowlabel">Warsztaty<span>pt/sob, ~15 osób</span></td>
-            <td><span class="cell c-work">4×/mies.</span></td>
-            <td><span class="cell c-work">4×/mies.</span></td>
+            <td class="rowlabel">Warsztaty<span>pt/sob, ~15 osób<span class="cell-note">liczba spotkań zależy od liczby zainteresowanych osób</span></span></td>
+            <td><span class="cell c-work">1–2×/mies.</span></td>
+            <td><span class="cell c-work">1–2×/mies.</span></td>
             <td><span class="cell off">wolne</span></td>
-            <td><span class="cell c-work">4×/mies.</span></td>
+            <td><span class="cell c-work">1–2×/mies.</span></td>
             <td><span class="cell off">wolne</span></td>
           </tr>
         </tbody>
@@ -228,12 +237,17 @@ footer{background:var(--ink);padding:3rem 2rem 1.75rem}
       <div class="exp-card">
         <div class="exp-ic">🎯</div>
         <h4>Warsztaty tematyczne</h4>
-        <p>Cztery razy w miesiącu, w piątki lub soboty, w małych grupach do ~15 osób — konkretny temat, konkretny efekt.</p>
+        <p>1–2 razy w miesiącu, w piątki lub soboty, w grupach do ~15 osób — dokładna liczba terminów zależy od liczby zgłoszeń.</p>
       </div>
       <div class="exp-card">
         <div class="exp-ic">🌿</div>
         <h4>Sierpień i grudzień — wolne</h4>
         <p>Te dwa miesiące są celowo bez zajęć grupowych — czas na regenerację, żeby jakość lekcji przez resztę roku była wysoka.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-ic">🏢</div>
+        <h4>Firmy — grafik do ustalenia</h4>
+        <p>Ten harmonogram dotyczy klientów indywidualnych. Dla firm dobieramy terminy i format osobno, zależnie od liczby osób i preferowanych godzin.</p>
       </div>
     </div>
 
