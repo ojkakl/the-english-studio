@@ -33,12 +33,12 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);ov
 
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(253,250,246,0.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav-inner{max-width:1160px;margin:0 auto;padding:0 2rem;height:66px;display:flex;align-items:center;justify-content:space-between}
-.logo-mark{display:flex;align-items:baseline;gap:0.4rem}
-.logo-main{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:600;color:var(--terra);letter-spacing:-0.5px}
-.logo-sub{font-size:0.68rem;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted)}
-.nav-links{display:flex;gap:0.25rem;list-style:none}
-.nav-links a{text-decoration:none;color:var(--muted);font-size:0.8rem;font-weight:400;padding:0.4rem 0.75rem;border-radius:6px;transition:all 0.18s}
+.nav-inner{max-width:1160px;margin:0 auto;padding:0 2rem;height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo-mark{display:flex;flex-direction:column;align-items:flex-start;gap:0.05rem;text-decoration:none}
+.logo-main{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--terra);letter-spacing:-0.5px;line-height:1.05}
+.logo-sub{font-size:0.6rem;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:var(--muted);line-height:1}
+.nav-links{display:flex;gap:0.1rem;list-style:none}
+.nav-links a{white-space:nowrap;text-decoration:none;color:var(--muted);font-size:0.77rem;font-weight:400;padding:0.4rem 0.6rem;border-radius:6px;transition:all 0.18s}
 .nav-links a:hover{color:var(--terra);background:var(--terra-pale)}
 .nav-actions{display:flex;align-items:center;gap:0.75rem}
 .nav-cta{background:var(--terra);color:white;padding:0.5rem 1.2rem;border-radius:8px;font-size:0.8rem;font-weight:500;text-decoration:none;transition:all 0.2s;letter-spacing:0.3px}
@@ -351,10 +351,10 @@ footer{background:var(--ink);padding:3rem 2rem 1.75rem}
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <div class="logo-mark">
+    <a href="index.html" class="logo-mark">
       <span class="logo-main">The English Studio</span>
       <span class="logo-sub">nauka angielskiego online</span>
-    </div>
+    </a>
     <ul class="nav-links">
       <li><a href="#zajecia" onclick="switchAudience('ind',document.querySelectorAll('.atbtn')[0])">Dla osób indywidualnych</a></li>
       <li><a href="#zajecia" onclick="showB2B()">Dla firm</a></li>
@@ -830,7 +830,7 @@ function setupForm(formId,btnId,suksesId){
 }
 setupForm('form-ind','fsub-ind','sukces-ind');
 setupForm('form-b2b','fsub-b2b','sukces-b2b');
-  // auto-switch to Firma tab when arriving with ?firma=1
+// auto-switch to Firma tab when arriving with ?firma=1
 if (new URLSearchParams(window.location.search).get('firma') === '1') {
   window.addEventListener('load', function(){
     setTimeout(function(){ switchContact('b2b'); }, 400);
